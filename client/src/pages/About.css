@@ -1,0 +1,122 @@
+/* About.css + shared page styles */
+
+/* ── Page Hero (reused across all pages) ─────────────── */
+.page-hero {
+  position: relative;
+  padding: 120px 0 80px;
+  text-align: center;
+  overflow: hidden;
+}
+.page-hero__bg { position: absolute; inset: 0; }
+.page-hero__content { position: relative; z-index: 2; }
+.page-hero .badge { margin-bottom: 14px; }
+.page-hero .section-title { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+
+/* ── About Overview Grid ─────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.about-text p { color: var(--text-muted); line-height: 1.85; }
+.about-text strong { color: var(--text); }
+.about-text em { color: var(--primary); font-style: normal; }
+
+.about-commitment {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+.about-commitment__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.about-commitment__item svg { color: #22c55e; }
+
+.about-achievements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.achievement-card {
+  text-align: center;
+  padding: 36px 24px;
+}
+.achievement-card__value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.achievement-card__label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Team ─────────────────────────────────────────────── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 4px;
+}
+.team-card { text-align: center; padding: 36px 24px; }
+.team-card__icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, rgba(26,111,196,0.12), rgba(26,111,196,0.06));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary);
+  margin: 0 auto 16px;
+  transition: var(--transition);
+}
+.team-card:hover .team-card__icon { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; }
+.team-card__role { font-weight: 600; color: var(--text); }
+
+/* ── Side by side ─────────────────────────────────────── */
+.side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.side-card {}
+.side-card__header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 20px;
+}
+.side-card__header svg { color: var(--primary); }
+.side-card__header h3 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 700; }
+
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.check-list li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.92rem; color: var(--text-muted);
+}
+.check-list li svg { color: #22c55e; flex-shrink: 0; }
+
+/* ── About Services Grid ─────────────────────────────── */
+.about-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.about-service-card {}
+
+/* ── Achievements Banner ─────────────────────────────── */
+.achievements-banner {}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .side-by-side { grid-template-columns: 1fr; }
+  .about-achievements { grid-template-columns: 1fr 1fr; }
+  .about-services-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}

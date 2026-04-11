@@ -1,0 +1,19 @@
+/* ============================================================
+   App.css — Layout + Page-level styles
+   ============================================================ */
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px; /* navbar offset */
+}
+
+/* ─── Page Transition Wrapper ───────────────────────────── */
+.page-enter {
+  animation: fadeUp 0.5s ease forwards;
+}
