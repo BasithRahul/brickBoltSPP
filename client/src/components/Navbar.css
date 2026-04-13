@@ -6,9 +6,8 @@
   right: 0;
   z-index: 1000;
   background: var(--nav-bg);
-  border-bottom: 1px solid transparent;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
   transition: var(--transition);
   height: 80px;
 }

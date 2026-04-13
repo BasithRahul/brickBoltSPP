@@ -18,6 +18,7 @@
   --surface-2: rgba(255, 255, 255, 0.25);
   --card: rgba(255, 255, 255, 0.88);
   --card-border: rgba(255, 255, 255, 0.4);
+  --nav-bg: rgba(255, 255, 255, 0.95);
   
   --text: #1a202c;
   --text-muted: #4a5568;
@@ -34,6 +35,7 @@
   --surface-2: rgba(255, 255, 255, 0.06);
   --card: rgba(19, 26, 46, 0.85);
   --card-border: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(10, 15, 28, 0.95);
   --text: #f7fafc;
   --text-muted: #a0aec0;
 }

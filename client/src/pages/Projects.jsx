@@ -146,6 +146,7 @@ const filters = ["All", "Residential", "Commercial"];
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("All");
   const [selected, setSelected] = useState(null);
+  const [modalImgIdx, setModalImgIdx] = useState(0);
   const [cardIndices, setCardIndices] = useState({});
 
   const filtered = filter === "All" ? projects : projects.filter((p) => p.category === filter);
@@ -158,6 +159,23 @@ export default function ProjectsPage() {
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [filter]);
+
+  // Reset modal image index when selection changes
+  useEffect(() => {
+    setModalImgIdx(0);
+  }, [selected]);
+
+  const nextModalImg = (e) => {
+    e.stopPropagation();
+    if (!selected.images) return;
+    setModalImgIdx((prev) => (prev + 1) % selected.images.length);
+  };
+
+  const prevModalImg = (e) => {
+    e.stopPropagation();
+    if (!selected.images) return;
+    setModalImgIdx((prev) => (prev === 0 ? selected.images.length - 1 : prev - 1));
+  };
 
   const handleNext = (e, p) => {
     e.stopPropagation();
@@ -254,33 +272,74 @@ export default function ProjectsPage() {
       {/* Modal */}
       {selected && (
         <div className="proj-modal-overlay" onClick={() => setSelected(null)}>
-          <div className="proj-modal glass" onClick={(e) => e.stopPropagation()}>
+          <div className="proj-modal card" onClick={(e) => e.stopPropagation()}>
             <button className="proj-modal__close" onClick={() => setSelected(null)} id="modal-close">
               <X size={20} />
             </button>
-            <div className="proj-modal__visual-container">
-              {selected.images && selected.images.length > 0 ? (
-                <div className="proj-modal__gallery">
-                  {selected.images.map((img, idx) => (
-                    <img key={idx} src={img} alt={`${selected.title} ${idx + 1}`} className="proj-modal__img" />
-                  ))}
+            <div className="proj-modal__container">
+              {/* Image Slider (Left) */}
+              <div className="proj-modal__slider">
+                {selected.images && selected.images.length > 0 ? (
+                  <>
+                    <img src={selected.images[modalImgIdx]} alt={selected.title} className="proj-modal__slider-img" />
+                    {selected.images.length > 1 && (
+                      <div className="proj-modal__slider-nav">
+                        <button className="proj-modal__slider-btn" onClick={prevModalImg}>
+                          <ChevronLeft size={24} />
+                        </button>
+                        <button className="proj-modal__slider-btn" onClick={nextModalImg}>
+                          <ChevronRight size={24} />
+                        </button>
+                      </div>
+                    )}
+                    <div className="proj-modal__slider-counter">
+                      {modalImgIdx + 1} / {selected.images.length}
+                    </div>
+                  </>
+                ) : (
+                  <div className="proj-modal__placeholder" style={{ background: `${selected.color}15` }}>
+                    <Building2 size={64} style={{ color: selected.color }} />
+                  </div>
+                )}
+              </div>
+
+              {/* Project Details (Right) */}
+              <div className="proj-modal__details">
+                <div className="proj-modal__header">
+                  <span className="badge" style={{ 
+                    color: selected.color, 
+                    borderColor: `${selected.color}40`, 
+                    background: `${selected.color}12` 
+                  }}>
+                    {selected.category}
+                  </span>
+                  <h2 className="proj-modal__title">{selected.title}</h2>
                 </div>
-              ) : (
-                <div className="proj-modal__visual" style={{ background: `${selected.color}18` }}>
-                  <div style={{ color: selected.color }}>{selected.icon}</div>
+                
+                <div className="proj-modal__body">
+                  <p className="proj-modal__desc">{selected.desc}</p>
+                  
+                  <div className="proj-modal__meta">
+                    <div className="proj-modal__meta-item">
+                      <span className="label">Location</span>
+                      <span className="value">{selected.location}</span>
+                    </div>
+                    <div className="proj-modal__meta-item">
+                      <span className="label">Scope/Size</span>
+                      <span className="value">{selected.area}</span>
+                    </div>
+                    <div className="proj-modal__meta-item">
+                      <span className="label">Project Year</span>
+                      <span className="value">{selected.year}</span>
+                    </div>
+                  </div>
                 </div>
-              )}
-            </div>
-            <div className="proj-modal__body">
-              <span className="badge" style={{ color: selected.color, borderColor: `${selected.color}40`, background: `${selected.color}12` }}>
-                {selected.category}
-              </span>
-              <h2>{selected.title}</h2>
-              <p style={{ color: "var(--text-muted)", lineHeight: 1.75 }}>{selected.desc}</p>
-              <div className="proj-modal__info">
-                <div><strong>Location:</strong> {selected.location}</div>
-                <div><strong>Details:</strong> {selected.area}</div>
-                <div><strong>Year:</strong> {selected.year}</div>
+
+                <div className="proj-modal__footer">
+                  <a href="tel:+919000100889" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+                    Enquire Now <ArrowRight size={18} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
