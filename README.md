@@ -4,6 +4,8 @@ A premium full-stack construction company website built with the MERN stack.
 
 ## Features
 - **Dynamic Dark/Light Mode**: Full theme customization with glassmorphism UI.
+- **Premium Background**: High-definition architectural render with parallax effect.
+- **Glassmorphism**: Elegant translucent UI components for a modern look.
 - **Lead Management**: Integrated backend to capture and store potential project leads.
 - **6 Comprehensive Pages**: Home, About, Services, Projects, Packages, Contact.
 - **Responsive Design**: Optimized for mobile, tablet, and desktop.
