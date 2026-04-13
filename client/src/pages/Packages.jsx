@@ -139,7 +139,7 @@ export default function PackagesPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="section-pad" style={{ background: "var(--surface)" }}>
+      <section className="section-pad">
         <div className="container">
           <div className="text-center">
             <span className="badge">Extra Services</span>
@@ -171,10 +171,10 @@ export default function PackagesPage() {
               Call us for a free consultation. We'll help you choose the right package for your dream project.
             </p>
             <div className="pkg-cta-actions">
-              <a href="tel:+919876543210" className="btn btn-primary">
+              <a href="tel:+919000100889" className="btn btn-primary">
                 <Phone size={18} /> Call Now
               </a>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="btn btn-accent">
+              <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer" className="btn btn-accent">
                 <MessageSquare size={18} /> WhatsApp
               </a>
             </div>

@@ -35,7 +35,7 @@ export default function Navbar() {
             <Building2 size={22} />
           </div>
           <div className="navbar__logo-text">
-            <span className="navbar__logo-name">Sree Pawan Putra</span>
+            <span className="navbar__logo-name">Shree Pawanputra</span>
             <span className="navbar__logo-sub">Projects</span>
           </div>
         </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="navbar__actions">
-          <a href="tel:+919876543210" className="btn btn-primary navbar__cta">
+          <a href="tel:+919000100889" className="btn btn-primary navbar__cta">
             <Phone size={16} /> Call Now
           </a>
           <button
@@ -96,7 +96,7 @@ export default function Navbar() {
           </NavLink>
         ))}
         <div className="navbar__mobile-actions">
-          <a href="tel:+919876543210" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+          <a href="tel:+919000100889" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
             <Phone size={16} /> Call Now
           </a>
           <button className="navbar__theme-btn navbar__theme-btn--mobile" onClick={toggleTheme}>

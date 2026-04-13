@@ -9,7 +9,7 @@ import "./Home.css";
 
 /* ── Data ──────────────────────────────────────────────── */
 const stats = [
-  { icon: <Clock size={32} />, value: "15+", label: "Years Experience" },
+  { icon: <Clock size={32} />, value: "21+", label: "Years Experience" },
   { icon: <Trophy size={32} />, value: "100+", label: "Projects Completed" },
   { icon: <Users size={32} />, value: "500+", label: "Happy Clients" },
   { icon: <ShieldCheck size={32} />, value: "100%", label: "Quality Assured" },
@@ -32,7 +32,7 @@ const steps = [
 ];
 
 const testimonials = [
-  { name: "Rajesh Kumar", location: "Hyderabad", rating: 5, text: "Excellent work! Sree Pawan Putra Projects built our 3BHK house on time and within budget. The quality of construction is outstanding.", role: "Homeowner" },
+  { name: "Rajesh Kumar", location: "Hyderabad", rating: 5, text: "Excellent work! Shree Pawanputra Projects built our 3BHK house on time and within budget. The quality of construction is outstanding.", role: "Homeowner" },
   { name: "Priya Reddy", location: "Kukatpally", rating: 5, text: "Very professional team. The 3D design they provided matched exactly what was constructed. Highly recommend for commercial projects.", role: "Business Owner" },
   { name: "Venkat Rao", location: "JNTU Road", rating: 5, text: "I hired them for my warehouse construction. The structural quality and timely delivery exceeded my expectations. Great team!", role: "Entrepreneur" },
   { name: "Sita Devi", location: "Miyapur", rating: 5, text: "From blueprint to handover, the team was transparent and professional. Best construction company in Hyderabad.", role: "Homeowner" },
@@ -113,13 +113,13 @@ export default function HomePage() {
             with Confidence
           </h1>
           <p className="hero__subtitle animate-fadeUp anim-delay-2">
-            Civil, Electrical & Mechanical Construction Experts — 15+ Years of Trust
+            Civil, Electrical & Mechanical Construction Experts — 21+ Years of Trust
           </p>
           <div className="hero__ctas animate-fadeUp anim-delay-3">
             <Link to="/contact" className="btn btn-primary hero__cta-btn">
               Get Free Consultation <ArrowRight size={18} />
             </Link>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer"
               className="btn btn-outline">
               <MessageSquare size={18} /> WhatsApp Us
             </a>
@@ -216,10 +216,10 @@ export default function HomePage() {
               Trusted by <span className="gradient-text">Hundreds</span> of Families
             </h2>
             <p style={{ color: "var(--text-muted)", marginBottom: 32, lineHeight: 1.8 }}>
-              With 15+ years of dedicated service and a passionate team of engineers and designers, we deliver projects that stand the test of time. We are registered under Govt. of Telangana as a trusted LLP.
+              With 21+ years of dedicated service and a passionate team of engineers and designers, we deliver projects that stand the test of time. We are registered under Govt. of Telangana as a trusted LLP.
             </p>
             <ul className="why-list">
-              {["Government Registered LLP", "15+ Years Track Record", "PPE & Site Safety Compliance", "On-Time Project Delivery", "Post-Handover Support"].map((item) => (
+              {["Government Registered LLP", "21+ Years Track Record", "PPE & Site Safety Compliance", "On-Time Project Delivery", "Post-Handover Support"].map((item) => (
                 <li key={item}><CheckCircle2 size={18} /> {item}</li>
               ))}
             </ul>
@@ -302,10 +302,10 @@ export default function HomePage() {
                 Fill in the form and our team will reach out within 24 hours with a free consultation.
               </p>
               <div style={{ marginTop: 28 }}>
-                <a href="tel:+919876543210" className="btn btn-primary" style={{ width: "100%", justifyContent: "center", marginBottom: 12 }}>
-                  <Phone size={18} /> Call: +91 98765 43210
+                <a href="tel:+919000100889" className="btn btn-primary" style={{ width: "100%", justifyContent: "center", marginBottom: 12 }}>
+                  <Phone size={18} /> Call: +91 90001 00889
                 </a>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer"
                   className="btn btn-accent" style={{ width: "100%", justifyContent: "center" }}>
                   <MessageSquare size={18} /> WhatsApp Now
                 </a>

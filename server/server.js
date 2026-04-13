@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/leads", require("./routes/leads"));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Sree Pawan Putra Projects API is running ✅" });
+  res.json({ message: "Shree Pawanputra Projects API is running ✅" });
 });
 
 // 404 handler

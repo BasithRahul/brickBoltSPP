@@ -1,0 +1,14 @@
+{
+  "name": "brick-bolt",
+  "version": "1.0.0",
+  "description": "Construction Brick Project",
+  "scripts": {
+    "start:client": "npm run dev --prefix client",
+    "start:server": "npm run dev --prefix server",
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "install:all": "npm install --prefix client && npm install --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -54,12 +54,12 @@ export default function Footer() {
               <Building2 size={22} />
             </div>
             <div>
-              <div className="footer__logo-name">Sree Pawan Putra</div>
+              <div className="footer__logo-name">Shree Pawanputra</div>
               <div className="footer__logo-sub">Projects</div>
             </div>
           </div>
           <p className="footer__desc">
-            Registered LLP under Government of Telangana. 15+ years of excellence in civil,
+            Registered LLP under Government of Telangana. 21+ years of excellence in civil,
             electrical & mechanical construction. Building dreams with quality and trust.
           </p>
           <div className="footer__socials">
@@ -105,7 +105,7 @@ export default function Footer() {
             </li>
             <li>
               <Phone size={16} className="footer__contact-icon" />
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+919000100889">+91 90001 00889</a>
             </li>
             <li>
               <Mail size={16} className="footer__contact-icon" />
@@ -113,7 +113,7 @@ export default function Footer() {
             </li>
           </ul>
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/919000100889"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-accent footer__wa-btn"
@@ -125,7 +125,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>© 2024 Sree Pawan Putra Projects. All Rights Reserved.</p>
+          <p>© 2024 Shree Pawanputra Projects. All Rights Reserved.</p>
           <p>Registered LLP | Govt. of Telangana</p>
         </div>
       </div>

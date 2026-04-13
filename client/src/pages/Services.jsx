@@ -169,7 +169,7 @@ export default function ServicesPage() {
       </section>
 
       {/* All Services Grid */}
-      <section className="section-pad" style={{ background: "var(--surface)" }}>
+      <section className="section-pad">
         <div className="container">
           <div className="text-center">
             <span className="badge">All Services</span>

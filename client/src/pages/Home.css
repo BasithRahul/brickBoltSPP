@@ -143,7 +143,7 @@
 .stat-card__label { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; }
 
 /* ── SERVICES ────────────────────────────────────────── */
-.services-section { background: var(--surface); }
+.services-section { background: transparent; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -216,7 +216,7 @@
 .process-step__body p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
 
 /* ── WHY US ─────────────────────────────────────────── */
-.why-section { background: var(--surface); }
+.why-section { background: transparent; }
 .why-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -269,7 +269,7 @@
 .why-float-card svg { color: var(--primary); }
 
 /* ── TESTIMONIALS ───────────────────────────────────── */
-.testimonials-section { background: var(--bg); }
+.testimonials-section { background: transparent; }
 .testimonials-slider { max-width: 720px; margin: 0 auto; }
 .testimonial-card {
   padding: 48px;
@@ -309,7 +309,7 @@
 .dot--active { width: 24px; border-radius: 4px; background: var(--primary); }
 
 /* ── LEAD FORM ──────────────────────────────────────── */
-.lead-section { background: var(--surface); }
+.lead-section { background: transparent; }
 .lead-wrapper { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: center; }
 .lead-form { padding: 40px; }
 .lead-form__title { font-family: 'Poppins', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 24px; }

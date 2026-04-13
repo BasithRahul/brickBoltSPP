@@ -1,24 +1,152 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Home, Building2, Factory, X } from "lucide-react";
+import { ArrowRight, Home, Building2, Factory, X, ChevronLeft, ChevronRight } from "lucide-react";
 import "./Projects.css";
 
 const projects = [
-  { id: 1, title: "3BHK Luxury Villa", category: "Residential", location: "Kukatpally, Hyderabad", area: "2400 sqft", year: "2023", color: "#1a6fc4", icon: <Home size={40} />, desc: "Premium 3BHK villa with Italian marble, modular kitchen, and smart home systems." },
-  { id: 2, title: "Tech Park Office Complex", category: "Commercial", location: "HITEC City, Hyderabad", area: "18,000 sqft", year: "2022", color: "#8b5cf6", icon: <Building2 size={40} />, desc: "Modern office complex with open-plan floors, conference rooms, and glass facades." },
-  { id: 3, title: "Industrial Warehouse", category: "Industrial", location: "Patancheru, Hyderabad", area: "35,000 sqft", year: "2023", color: "#ef4444", icon: <Factory size={40} />, desc: "Heavy-duty warehouse with loading docks, fire safety systems, and solar roofing." },
-  { id: 4, title: "Apartment Complex", category: "Residential", location: "Miyapur, Hyderabad", area: "42,000 sqft", year: "2021", color: "#22c55e", icon: <Home size={40} />, desc: "G+5 residential apartment complex with 24 units, car parking, and full amenities." },
-  { id: 5, title: "Commercial Showroom", category: "Commercial", location: "Ameerpet, Hyderabad", area: "6,500 sqft", year: "2022", color: "#f59e0b", icon: <Building2 size={40} />, desc: "Premium showroom with glass-front façade, LED lighting, and modern interiors." },
-  { id: 6, title: "Steel Factory Building", category: "Industrial", location: "Jeedimetla, Hyderabad", area: "28,000 sqft", year: "2023", color: "#06b6d4", icon: <Factory size={40} />, desc: "Pre-engineered industrial building for steel manufacturing with overhead cranes." },
-  { id: 7, title: "Independent House", category: "Residential", location: "JNTU Road, Hyderabad", area: "1,800 sqft", year: "2023", color: "#1a6fc4", icon: <Home size={40} />, desc: "G+2 independent house with contemporary elevation and vastu-compliant layout." },
-  { id: 8, title: "Corporate Office", category: "Commercial", location: "Gachibowli, Hyderabad", area: "12,000 sqft", year: "2022", color: "#8b5cf6", icon: <Building2 size={40} />, desc: "Corporate office with conference hall, executive cabins, and green building features." },
-  { id: 9, title: "Cold Storage Facility", category: "Industrial", location: "Patancheru, Hyderabad", area: "15,000 sqft", year: "2021", color: "#ef4444", icon: <Factory size={40} />, desc: "Cold storage facility with insulated panels, refrigeration systems, and dock levelers." },
+  { 
+    id: 1, 
+    title: "Vasanth Nagar Site", 
+    category: "Residential", 
+    location: "1) Vasanth Nagar site", 
+    area: "5 Floors, Each Floor 3BHK flats", 
+    year: "Ongoing", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/address1/img1.jpeg",
+      "/projects/address1/img2.jpeg",
+      "/projects/address1/img3.jpeg",
+      "/projects/address1/img4.jpeg",
+      "/projects/address1/img5.jpeg"
+    ],
+    desc: "Premium residential project in Vasanth Nagar featuring 5 floors with spacious 3BHK flats on each level. Modern construction with high-end structural integrity." 
+  },
+  { 
+    id: 2, 
+    title: "Vasanth Nagar Residence", 
+    category: "Residential", 
+    location: "Plot no: 733, Vasanth nagar, Road no: 21, near Kukatpally Housing Board, Hyderabad.", 
+    area: "G + 4 Floors", 
+    year: "2024", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/vasanth-nagar/img1.jpg",
+      "/projects/vasanth-nagar/img2.jpg"
+    ],
+    desc: "A sleek, modern residential building featuring a unique geometric facade. This project showcases our commitment to aesthetic excellence and functional design." 
+  },
+  { 
+    id: 3, 
+    title: "Nallagandla Residence", 
+    category: "Residential", 
+    location: "Nallagandla 167 sq.yds.", 
+    area: "5 Floors + Penthouse (2BHK each)", 
+    year: "Ongoing", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/nallagandla-167/image1.jpeg",
+      "/projects/nallagandla-167/image2.jpeg"
+    ],
+    desc: "A significant residential development on 167 sq.yds featuring 5 floors and a penthouse. Each floor is designed as a spacious 2BHK flat, maximizing space and ventilation." 
+  },
+  { 
+    id: 4, 
+    title: "Skanda Hospital Building", 
+    category: "Commercial", 
+    location: "Mig-140, Nallagandla HUDA layout", 
+    area: "Site Area: 258 sq.yds.", 
+    year: "2023", 
+    color: "#8b5cf6", 
+    images: [
+      "/projects/Skanda/img1.jpeg",
+      "/projects/Skanda/img2.jpeg",
+      "/projects/Skanda/img3.jpeg"
+    ],
+    desc: "A specialized commercial construction project for a hospital facility. Optimized for medical operations with structural support for high-end equipment and patient flow." 
+  },
+  { 
+    id: 5, 
+    title: "Nallagandla Residential", 
+    category: "Residential", 
+    location: "Nallagandla 258 sq.yds.", 
+    area: "4 Floors (3 BHK each)", 
+    year: "Ongoing", 
+    color: "#22c55e", 
+    images: [
+      "/projects/address5/img1.jpeg",
+      "/projects/address5/img2.jpeg"
+    ],
+    desc: "A spacious residential 4-floor development situated on a 258 sq.yds plot. Each floor is meticulously designed to house a premium 3 BHK flat with modern amenities." 
+  },
+  { 
+    id: 6, 
+    title: "Nallagandla Guest House", 
+    category: "Residential", 
+    location: "Guesthouse, at Nallagandla HUDA layout", 
+    area: "Total Area: 258 sq.yds.", 
+    year: "2023", 
+    color: "#06b6d4", 
+    images: [
+      "/projects/guest-house/img1.jpeg",
+      "/projects/guest-house/img2.jpeg"
+    ],
+    desc: "A beautifully constructed guesthouse located in the prestigious Nallagandla HUDA layout. Designed for hospitality and comfort, featuring high-end finishes and efficient space planning." 
+  },
+  { 
+    id: 7, 
+    title: "Goutam Mondal School", 
+    category: "Commercial", 
+    location: "Nallagandla 620 sq.yds.", 
+    area: "Parking + 5 Floors (PT Beams)", 
+    year: "Ongoing", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/nallagandla-school/img1.jpeg",
+      "/projects/nallagandla-school/img2.jpeg"
+    ],
+    desc: "A major educational project in Nallagandla on a 620 sq.yds plot. Featuring a modern PT Beams normal slab structure with parking and 5 floors, designed for a high-capacity school building." 
+  },
+  { 
+    id: 8, 
+    title: "Kollur Commercial Building", 
+    category: "Commercial", 
+    location: "Kollur Commercial building, 1200 sq.yds.", 
+    area: "Cellar + G + 4 Floors (PT Slab)", 
+    year: "Ongoing", 
+    color: "#8b5cf6", 
+    images: [
+      "/projects/Address8/img1.jpeg",
+      "/projects/Address8/img2.jpeg",
+      "/projects/Address8/img3.jpeg",
+      "/projects/Address8/img4.jpeg",
+      "/projects/Address8/img5.jpeg"
+    ],
+    desc: "A significant commercial construction project in Kollur spanning 1200 sq.yds. Featuring a robust Cellar + G + 4 floor structure using PT slab technology, currently under construction." 
+  },
+  { 
+    id: 9, 
+    title: "Ayyappa Society Residence", 
+    category: "Residential", 
+    location: "Ayyappa Society 300 sq.yds.", 
+    area: "6 Floors + Penthouse", 
+    year: "Ongoing", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/Adress10/img1.jpeg",
+      "/projects/Adress10/img2.jpeg",
+      "/projects/Adress10/img3.jpeg",
+      "/projects/Adress10/img4.jpeg",
+      "/projects/Adress10/img5.jpeg"
+    ],
+    desc: "A massive 300 sq.yds residential project at Ayyappa Society. The development features 6 floors and a penthouse, with each floor housing multiple units (2x2BHK and 2x1BHK), optimized for maximum occupancy and modern living." 
+  },
 ];
 
-const filters = ["All", "Residential", "Commercial", "Industrial"];
+const filters = ["All", "Residential", "Commercial"];
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("All");
   const [selected, setSelected] = useState(null);
+  const [cardIndices, setCardIndices] = useState({});
 
   const filtered = filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
@@ -30,6 +158,24 @@ export default function ProjectsPage() {
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, [filter]);
+
+  const handleNext = (e, p) => {
+    e.stopPropagation();
+    if (!p.images || p.images.length <= 1) return;
+    setCardIndices(prev => ({
+      ...prev,
+      [p.id]: (prev[p.id] === undefined ? 0 : prev[p.id] + 1) % p.images.length
+    }));
+  };
+
+  const handlePrev = (e, p) => {
+    e.stopPropagation();
+    if (!p.images || p.images.length <= 1) return;
+    setCardIndices(prev => ({
+      ...prev,
+      [p.id]: (prev[p.id] === undefined || prev[p.id] === 0 ? p.images.length - 1 : prev[p.id] - 1)
+    }));
+  };
 
   return (
     <div className="projects-page page-enter">
@@ -63,26 +209,44 @@ export default function ProjectsPage() {
 
           {/* Grid */}
           <div className="proj-grid">
-            {filtered.map((p, i) => (
-              <div key={p.id} className="proj-card card reveal"
-                style={{ transitionDelay: `${i * 0.05}s` }}
-                onClick={() => setSelected(p)}>
-                <div className="proj-card__visual" style={{ background: `${p.color}15` }}>
-                  <div className="proj-card__icon" style={{ color: p.color }}>{p.icon}</div>
-                  <span className="proj-card__cat badge" style={{ color: p.color, borderColor: `${p.color}40`, background: `${p.color}12` }}>
-                    {p.category}
-                  </span>
+            {filtered.map((p, i) => {
+              const activeIdx = cardIndices[p.id] || 0;
+              const hasImages = p.images && p.images.length > 0;
+              
+              return (
+                <div key={p.id} className="proj-card card reveal"
+                  style={{ transitionDelay: `${i * 0.05}s` }}
+                  onClick={() => setSelected(p)}>
+                  <div className="proj-card__visual" style={{ background: hasImages ? "none" : `${p.color}15` }}>
+                    {hasImages ? (
+                      <>
+                        <img src={p.images[activeIdx]} alt={p.title} className="proj-card__img" />
+                        {p.images.length > 1 && (
+                          <div className="proj-card__nav">
+                            <button className="proj-card__nav-btn" onClick={(e) => handlePrev(e, p)}>
+                              <ChevronLeft size={16} />
+                            </button>
+                            <button className="proj-card__nav-btn" onClick={(e) => handleNext(e, p)}>
+                              <ChevronRight size={16} />
+                            </button>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="proj-card__icon" style={{ color: p.color }}>{p.icon}</div>
+                    )}
+                  </div>
+                  <div className="proj-card__body">
+                    <h3 className="proj-card__title">{p.title}</h3>
+                    <p className="proj-card__meta">📍 {p.location}</p>
+                    <p className="proj-card__meta">📐 {p.area}</p>
+                    <button className="proj-card__link">
+                      View Details <ArrowRight size={14} />
+                    </button>
+                  </div>
                 </div>
-                <div className="proj-card__body">
-                  <h3 className="proj-card__title">{p.title}</h3>
-                  <p className="proj-card__meta">📍 {p.location}</p>
-                  <p className="proj-card__meta">📐 {p.area} &nbsp;·&nbsp; 📅 {p.year}</p>
-                  <button className="proj-card__link">
-                    View Details <ArrowRight size={14} />
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -94,8 +258,18 @@ export default function ProjectsPage() {
             <button className="proj-modal__close" onClick={() => setSelected(null)} id="modal-close">
               <X size={20} />
             </button>
-            <div className="proj-modal__visual" style={{ background: `${selected.color}18` }}>
-              <div style={{ color: selected.color }}>{selected.icon}</div>
+            <div className="proj-modal__visual-container">
+              {selected.images && selected.images.length > 0 ? (
+                <div className="proj-modal__gallery">
+                  {selected.images.map((img, idx) => (
+                    <img key={idx} src={img} alt={`${selected.title} ${idx + 1}`} className="proj-modal__img" />
+                  ))}
+                </div>
+              ) : (
+                <div className="proj-modal__visual" style={{ background: `${selected.color}18` }}>
+                  <div style={{ color: selected.color }}>{selected.icon}</div>
+                </div>
+              )}
             </div>
             <div className="proj-modal__body">
               <span className="badge" style={{ color: selected.color, borderColor: `${selected.color}40`, background: `${selected.color}12` }}>
@@ -105,7 +279,7 @@ export default function ProjectsPage() {
               <p style={{ color: "var(--text-muted)", lineHeight: 1.75 }}>{selected.desc}</p>
               <div className="proj-modal__info">
                 <div><strong>Location:</strong> {selected.location}</div>
-                <div><strong>Area:</strong> {selected.area}</div>
+                <div><strong>Details:</strong> {selected.area}</div>
                 <div><strong>Year:</strong> {selected.year}</div>
               </div>
             </div>

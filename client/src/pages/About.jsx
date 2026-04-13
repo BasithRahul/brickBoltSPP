@@ -48,7 +48,7 @@ const serviceCategories = [
 ];
 
 const achievements = [
-  { value: "15+", label: "Years of Experience" },
+  { value: "21+", label: "Years of Experience" },
   { value: "100+", label: "Projects Delivered" },
   { value: "500+", label: "Happy Clients" },
   { value: "2017", label: "Established Year" },
@@ -90,15 +90,15 @@ export default function AboutPage() {
           <div className="about-text reveal">
             <span className="badge">Our Story</span>
             <h2 className="section-title" style={{ textAlign: "left" }}>
-              Sree Pawan Putra <span className="gradient-text">Projects</span>
+              Shree Pawanputra <span className="gradient-text">Projects</span>
             </h2>
             <p>
-              Sree Pawan Putra Projects is a professionally managed construction company registered
+              Shree Pawanputra Projects is a professionally managed construction company registered
               under the <strong>Government of Telangana as an LLP organization</strong>.
             </p>
             <br />
             <p>
-              With over <strong>15+ years of experience</strong> in the construction industry, we
+              With over <strong>21+ years of experience</strong> in the construction industry, we
               specialize in delivering high-quality residential, commercial, and industrial projects.
               Our foundation is built on <em>strength, reliability, and customer satisfaction</em>.
             </p>
@@ -128,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Team */}
-      <section className="section-pad" style={{ background: "var(--surface)" }}>
+      <section className="section-pad">
         <div className="container">
           <div className="text-center">
             <span className="badge">Our Team</span>
@@ -179,7 +179,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Services Overview */}
-      <section className="section-pad" style={{ background: "var(--surface)" }}>
+      <section className="section-pad">
         <div className="container">
           <div className="text-center">
             <span className="badge">What We Build</span>

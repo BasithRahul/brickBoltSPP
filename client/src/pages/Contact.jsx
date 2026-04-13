@@ -53,14 +53,14 @@ export default function ContactPage() {
                   <div className="contact-info-icon"><MapPin size={22} /></div>
                   <div>
                     <strong>Address</strong>
-                    <p>Unit No 810 & 811, Manjeera Trinity Corporate,<br />JNTU Road, Kukatpally, Hyderabad – 500072</p>
+                    <p>Unit No 810, 811 Sy No 1050, Near Manjeera Corporate Office,<br />Manjeera Trinity Corporate, Jntu Kukat Pally, Hyderabad-500085</p>
                   </div>
                 </div>
                 <div className="contact-info-item">
                   <div className="contact-info-icon"><Phone size={22} /></div>
                   <div>
                     <strong>Phone</strong>
-                    <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                    <p><a href="tel:+919000100889">+91 90001 00889</a></p>
                   </div>
                 </div>
                 <div className="contact-info-item">
@@ -81,10 +81,10 @@ export default function ContactPage() {
 
               {/* Quick Actions */}
               <div className="contact-quick-actions">
-                <a href="tel:+919876543210" className="btn btn-primary" id="contact-call">
+                <a href="tel:+919000100889" className="btn btn-primary" id="contact-call">
                   <Phone size={18} /> Call Directly
                 </a>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer"
                   className="btn btn-accent" id="contact-whatsapp">
                   <MessageSquare size={18} /> WhatsApp
                 </a>
@@ -93,7 +93,7 @@ export default function ContactPage() {
               {/* Why Contact Us */}
               <div className="why-contact card">
                 <h4>Why Choose Us?</h4>
-                {["Free Consultation", "Response within 24 hours", "No hidden charges", "Trusted for 15+ Years"].map((item) => (
+                {["Free Consultation", "Response within 24 hours", "No hidden charges", "Trusted for 21+ Years"].map((item) => (
                   <div key={item} className="why-contact__item">
                     <CheckCircle2 size={16} /> <span>{item}</span>
                   </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 )}
                 {status === "error" && (
                   <div className="form-msg form-msg--error">
-                    Failed to send. Please call us at +91 98765 43210
+                    Failed to send. Please call us at +91 90001 00889
                   </div>
                 )}
               </form>
@@ -165,13 +165,13 @@ export default function ContactPage() {
             </h3>
             <div className="map-embed">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.506578!2d78.3978!3d17.4924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zManjeera+Trinity+Corporate+JNTU+Road+Kukatpally!5e0!3m2!1sen!2sin!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.379201503348!2d78.39008137397686!3d17.48938139999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb918dab342375%3A0x180a04af0c47f594!2sManjeera%20Trinity%20Corporate!5e0!3m2!1sen!2sin!4v1713002077052!5m2!1sen!2sin"
                 width="100%" height="100%"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Sree Pawan Putra Projects Location"
+                title="Shree Pawanputra Projects Location"
               />
             </div>
           </div>
