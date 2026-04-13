@@ -34,11 +34,12 @@
 }
 .proj-card { cursor: pointer; padding: 0; overflow: hidden; }
 .proj-card__visual {
-  height: 160px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 .proj-card__icon { animation: float 5s ease-in-out infinite; }
 .proj-card__cat {
@@ -47,17 +48,17 @@
   right: 14px;
   font-size: 0.72rem;
 }
-.proj-card__body { padding: 24px; }
-.proj-card__title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
-.proj-card__meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px; }
+.proj-card__body { padding: 16px 20px 24px; }
+.proj-card__title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
+.proj-card__meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 3px; }
 .proj-card__link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   color: var(--primary);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  margin-top: 14px;
+  margin-top: 12px;
   background: none;
   border: none;
   cursor: pointer;
@@ -78,7 +79,7 @@
   animation: fadeIn 0.2s ease;
 }
 .proj-modal {
-  max-width: 900px;
+  max-width: 780px;
   width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
@@ -106,7 +107,7 @@
 
 .proj-modal__container {
   display: flex;
-  height: 600px;
+  height: 480px;
   max-height: 85vh;
 }
 
