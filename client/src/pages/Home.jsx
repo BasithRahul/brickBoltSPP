@@ -114,7 +114,7 @@ export default function HomePage() {
             with Confidence
           </h1>
           <p className="hero__subtitle animate-fadeUp anim-delay-2">
-            Civil, Electrical & Mechanical Construction Experts — 21+ Years of Trust
+            B.Tech Civil Engineering — Civil, Electrical & Mechanical Experts — 21+ Years of Trust
           </p>
           <div className="hero__ctas animate-fadeUp anim-delay-3">
             <Link to="/contact" className="btn btn-primary hero__cta-btn">
@@ -216,7 +216,7 @@ export default function HomePage() {
               Trusted by <span className="gradient-text">Hundreds</span> of Families
             </h2>
             <p style={{ color: "var(--text-muted)", marginBottom: 32, lineHeight: 1.8 }}>
-              With 21+ years of dedicated service and a passionate team of engineers and designers, we deliver projects that stand the test of time. We are registered under Govt. of Telangana as a trusted Proprietorship.
+              With B.Tech Civil Engineering and 21+ years of dedicated service and a passionate team of engineers and designers, we deliver projects that stand the test of time. We are registered under Govt. of Telangana as a trusted Proprietorship.
             </p>
             <ul className="why-list">
               {["Government Registered Proprietorship", "21+ Years Track Record", "PPE & Site Safety Compliance", "On-Time Project Delivery", "Post-Handover Support"].map((item) => (

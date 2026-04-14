@@ -100,7 +100,7 @@ export default function AboutPage() {
             </p>
             <br />
             <p>
-              With over <strong>21+ years of experience</strong> in the construction industry, we
+              With <strong>B.Tech Civil Engineering and over 21+ years of experience</strong> in the construction industry, we
               specialize in delivering high-quality residential, commercial, and industrial
               projects. Our foundation is built on <strong>strength, reliability, and customer
               satisfaction</strong>.

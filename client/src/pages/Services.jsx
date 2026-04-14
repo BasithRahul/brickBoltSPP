@@ -14,6 +14,8 @@ const categories = [
       "RCC framing and masonry",
       "Brickwork & plastering",
       "Flooring & tiling",
+      "Electrical & plumbing works",
+      "Painting works",
       "Waterproofing",
     ],
   },
