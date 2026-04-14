@@ -122,6 +122,21 @@ const projects = [
     ],
     desc: "A massive 300 sq.yds residential project at Ayyappa Society. The development features 6 floors and a penthouse, with each floor housing multiple units (2x2BHK and 2x1BHK), optimized for maximum occupancy and modern living." 
   },
+  { 
+    id: 10, 
+    title: "Nallagandla Double Duplex", 
+    category: "Residential", 
+    location: "Nallagandla 258 SQ.YD, PLOT NO. MIG-533", 
+    area: "Double Duplex House", 
+    year: "Ongoing", 
+    color: "#22c55e", 
+    images: [
+      "/projects/New Nallagandla/shared image.jpg",
+      "/projects/New Nallagandla/shared image (1).jpg",
+      "/projects/New Nallagandla/shared image (2).jpg"
+    ],
+    desc: "A prestigious residential development in Nallagandla featuring a double duplex house on a 258 SQ.YD plot. Designed for maximum space utilization and premium living experience." 
+  },
 ];
 
 const filters = ["All", "Residential", "Commercial"];
