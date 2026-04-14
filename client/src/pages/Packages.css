@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  align-items: start;
+  align-items: stretch;
 }
 .pricing-card {
   position: relative;
@@ -15,10 +15,10 @@
 .pricing-card--popular {
   border-color: var(--primary);
   box-shadow: 0 0 0 2px var(--primary), var(--shadow-lg);
-  transform: scale(1.03);
+  z-index: 2;
 }
 .pricing-card--popular:hover {
-  transform: scale(1.03) translateY(-6px);
+  transform: translateY(-6px);
 }
 .pricing-card__badge {
   position: absolute;
@@ -74,7 +74,14 @@
 }
 .pricing-card__features li svg { flex-shrink: 0; margin-top: 2px; }
 
-.pricing-card__cta { justify-content: center; width: 100%; }
+.pricing-card__cta { 
+  justify-content: center; 
+  width: 100%; 
+  margin-top: auto;
+  min-height: 52px;
+  padding: 14px 24px !important;
+  font-size: 0.95rem !important;
+}
 
 .addons-grid {
   display: grid;

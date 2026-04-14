@@ -119,9 +119,8 @@ export default function HomePage() {
             <Link to="/contact" className="btn btn-primary hero__cta-btn">
               Get Free Consultation <ArrowRight size={18} />
             </Link>
-            <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer"
-              className="btn btn-outline">
-              <MessageSquare size={18} /> WhatsApp Us
+            <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
+              <MessageSquare size={18} /> WhatsApp
             </a>
           </div>
 
@@ -306,7 +305,7 @@ export default function HomePage() {
                   <Phone size={18} /> Call: +91 90001 00889
                 </a>
                 <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer"
-                  className="btn btn-accent" style={{ width: "100%", justifyContent: "center" }}>
+                  className="btn btn-whatsapp" style={{ width: "100%", justifyContent: "center" }}>
                   <MessageSquare size={18} /> WhatsApp Now
                 </a>
               </div>

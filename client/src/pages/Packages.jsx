@@ -128,8 +128,7 @@ export default function PackagesPage() {
                   ))}
                 </ul>
                 <Link to="/contact" id={`pkg-cta-${plan.id}`}
-                  className={`btn ${plan.popular ? "btn-primary" : "btn-outline"} pricing-card__cta`}
-                  style={plan.id === "premium" ? { borderColor: plan.color, color: plan.color } : {}}>
+                  className={`btn ${plan.popular ? "btn-primary" : "btn-outline"} pricing-card__cta`}>
                   {plan.cta} <ArrowRight size={16} />
                 </Link>
               </div>
@@ -174,7 +173,7 @@ export default function PackagesPage() {
               <a href="tel:+919000100889" className="btn btn-primary">
                 <Phone size={18} /> Call Now
               </a>
-              <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer" className="btn btn-accent">
+              <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
                 <MessageSquare size={18} /> WhatsApp
               </a>
             </div>

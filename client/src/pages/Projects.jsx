@@ -277,7 +277,33 @@ export default function ProjectsPage() {
               <X size={20} />
             </button>
             <div className="proj-modal__container">
-              {/* Project Details (Left) */}
+              {/* Image Slider (Left) */}
+              <div className="proj-modal__slider">
+                {selected.images && selected.images.length > 0 ? (
+                  <>
+                    <img src={selected.images[modalImgIdx]} alt={selected.title} className="proj-modal__slider-img" />
+                    {selected.images.length > 1 && (
+                      <div className="proj-modal__slider-nav">
+                        <button className="proj-modal__slider-btn" onClick={prevModalImg}>
+                          <ChevronLeft size={24} />
+                        </button>
+                        <button className="proj-modal__slider-btn" onClick={nextModalImg}>
+                          <ChevronRight size={24} />
+                        </button>
+                      </div>
+                    )}
+                    <div className="proj-modal__slider-counter">
+                      {modalImgIdx + 1} / {selected.images.length}
+                    </div>
+                  </>
+                ) : (
+                  <div className="proj-modal__placeholder" style={{ background: `${selected.color}15` }}>
+                    <Building2 size={64} style={{ color: selected.color }} />
+                  </div>
+                )}
+              </div>
+
+              {/* Project Details (Right) */}
               <div className="proj-modal__details">
                 <div className="proj-modal__header">
                   <span className="badge" style={{ 
@@ -314,32 +340,6 @@ export default function ProjectsPage() {
                     Enquire Now <ArrowRight size={18} />
                   </a>
                 </div>
-              </div>
-
-              {/* Image Slider (Right) */}
-              <div className="proj-modal__slider">
-                {selected.images && selected.images.length > 0 ? (
-                  <>
-                    <img src={selected.images[modalImgIdx]} alt={selected.title} className="proj-modal__slider-img" />
-                    {selected.images.length > 1 && (
-                      <div className="proj-modal__slider-nav">
-                        <button className="proj-modal__slider-btn" onClick={prevModalImg}>
-                          <ChevronLeft size={24} />
-                        </button>
-                        <button className="proj-modal__slider-btn" onClick={nextModalImg}>
-                          <ChevronRight size={24} />
-                        </button>
-                      </div>
-                    )}
-                    <div className="proj-modal__slider-counter">
-                      {modalImgIdx + 1} / {selected.images.length}
-                    </div>
-                  </>
-                ) : (
-                  <div className="proj-modal__placeholder" style={{ background: `${selected.color}15` }}>
-                    <Building2 size={64} style={{ color: selected.color }} />
-                  </div>
-                )}
               </div>
             </div>
           </div>

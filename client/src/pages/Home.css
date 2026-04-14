@@ -122,6 +122,8 @@
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--card-border);
   overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 .stat-card {
   padding: 40px 28px;
@@ -130,7 +132,7 @@
   transition: var(--transition);
 }
 .stat-card:last-child { border-right: none; }
-.stat-card:hover { background: rgba(26,111,196,0.05); }
+.stat-card:hover { background: rgba(26,111,196,0.1); }
 .stat-card__icon { color: var(--primary); margin: 0 auto 12px; display: flex; justify-content: center; }
 .stat-card__value {
   font-family: 'Poppins', sans-serif;

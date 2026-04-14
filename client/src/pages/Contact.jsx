@@ -85,7 +85,7 @@ export default function ContactPage() {
                   <Phone size={18} /> Call Directly
                 </a>
                 <a href="https://wa.me/919000100889" target="_blank" rel="noopener noreferrer"
-                  className="btn btn-accent" id="contact-whatsapp">
+                  className="btn btn-whatsapp" id="contact-whatsapp">
                   <MessageSquare size={18} /> WhatsApp
                 </a>
               </div>

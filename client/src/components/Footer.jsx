@@ -116,7 +116,7 @@ export default function Footer() {
             href="https://wa.me/919000100889"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-accent footer__wa-btn"
+            className="btn btn-whatsapp footer__wa-btn"
           >
             WhatsApp Us
           </a>
