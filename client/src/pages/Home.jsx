@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight, Phone, MessageSquare, Home, Building2,
   Factory, Layers, Box, CheckCircle2, Star, ChevronLeft, ChevronRight,
-  Trophy, Clock, Users, ShieldCheck, Send, Palette
+  Trophy, Clock, Users, ShieldCheck, Send
 } from "lucide-react";
 import "./Home.css";
 
@@ -19,7 +19,7 @@ const services = [
   { icon: <Home size={28} />, title: "Residential Construction", desc: "Individual homes, villas, and apartments built with precision and care." },
   { icon: <Building2 size={28} />, title: "Commercial Buildings", desc: "Office complexes, malls, and commercial spaces tailored to your business." },
   { icon: <Factory size={28} />, title: "Industrial Projects", desc: "Warehouses, factories, and industrial buildings with structural excellence." },
-  { icon: <Palette size={28} />, title: "Interior Design", desc: "Innovative and aesthetic interior design solutions for modern living spaces." },
+  { icon: <Layers size={28} />, title: "Interior Design", desc: "Innovative and aesthetic interior design solutions for modern living spaces." },
   { icon: <Layers size={28} />, title: "Structural Design", desc: "Expert structural planning and engineering for buildings of all scales." },
   { icon: <Box size={28} />, title: "AutoCAD & 3D Design", desc: "Detailed AutoCAD drawings, 3D visualizations, and elevation designs." },
 ];

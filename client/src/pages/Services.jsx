@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Home, Building2, Factory, Layers, Box, Settings, CheckCircle2, Palette } from "lucide-react";
+import { Home, Building2, Factory, Layers, Box, Settings, CheckCircle2 } from "lucide-react";
 import "./Services.css";
 
 const categories = [
@@ -33,7 +33,7 @@ const categories = [
   },
   {
     id: "interior",
-    icon: <Palette size={32} />,
+    icon: <Layers size={32} />,
     title: "Interior Design",
     color: "#ec4899",
     desc: "Innovative and aesthetic interior design solutions that reflect your personality and style.",

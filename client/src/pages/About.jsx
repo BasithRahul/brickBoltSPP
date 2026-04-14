@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Users, Wrench, ShieldCheck, Target, CheckCircle2, Building2, Award } from "lucide-react";
+import { Users, Wrench, ShieldCheck, Target, CheckCircle2, Building2, Award, Clock, Trophy, Star } from "lucide-react";
 import "./About.css";
 
 const teamRoles = [
@@ -63,13 +63,6 @@ export default function AboutPage() {
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  const achievements = [
-    { value: "21+", label: "Years Experience" },
-    { value: "40+", label: "Projects Delivered" },
-    { value: "500+", label: "Happy Clients" },
-    { value: "2018", label: "Established Year" },
-  ];
 
   return (
     <div className="about-page page-enter">
