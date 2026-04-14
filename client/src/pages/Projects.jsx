@@ -50,7 +50,7 @@ const projects = [
     id: 5, 
     title: "Nallagandla Residential", 
     category: "Residential", 
-    location: "Nallagandla 258 sq.yds.", 
+    location: "Plot no. MIG 774, Nallagandla 258 sq.yds.", 
     area: "4 Floors (3 BHK each)", 
     year: "Ongoing", 
     color: "#22c55e", 
@@ -60,11 +60,10 @@ const projects = [
     ],
     desc: "A spacious residential 4-floor development situated on a 258 sq.yds plot. Each floor is meticulously designed to house a premium 3 BHK flat with modern amenities." 
   },
-  { 
     id: 6, 
     title: "Nallagandla Guest House", 
     category: "Guest House", 
-    location: "Guesthouse, at Nallagandla HUDA layout", 
+    location: "Plot no. MIG 532, Nallagandla HUDA layout", 
     area: "Total Area: 258 sq.yds.", 
     year: "2023", 
     color: "#06b6d4", 
