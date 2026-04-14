@@ -114,8 +114,6 @@ const projects = [
     year: "Ongoing", 
     color: "#1a6fc4", 
     images: [
-      "/projects/Adress10/img1.jpeg",
-      "/projects/Adress10/img2.jpeg",
       "/projects/Adress10/img3.jpeg",
       "/projects/Adress10/img4.jpeg",
       "/projects/Adress10/img5.jpeg"
