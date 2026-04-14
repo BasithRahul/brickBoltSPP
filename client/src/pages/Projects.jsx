@@ -76,7 +76,7 @@ const projects = [
   },
   { 
     id: 7, 
-    title: "Goutam Mondal School", 
+    title: "Goutam Model School", 
     category: "Commercial", 
     location: "Nallagandla 620 sq.yds.", 
     area: "Parking + 5 Floors (PT Beams)", 
