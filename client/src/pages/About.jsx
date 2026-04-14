@@ -94,7 +94,7 @@ export default function AboutPage() {
             </h2>
             <p>
               Shree Pawanputra Projects is a professionally managed construction company registered
-              under the <strong>Government of Telangana as an LLP organization</strong>.
+              under the <strong>Government of Telangana as an LLP organization (GSTIN: 36BIOPP9227R1Z3)</strong>.
             </p>
             <br />
             <p>

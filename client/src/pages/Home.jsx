@@ -105,7 +105,7 @@ export default function HomePage() {
         </div>
         <div className="container hero__content">
           <div className="hero__badge badge animate-fadeUp">
-            ✦ Registered LLP · Govt of Telangana ✦
+            ✦ Registered LLP · Govt of Telangana · GSTIN: 36BIOPP9227R1Z3 ✦
           </div>
           <h1 className="hero__title animate-fadeUp anim-delay-1">
             Build Your<br />

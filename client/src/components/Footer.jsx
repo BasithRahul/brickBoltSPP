@@ -59,8 +59,8 @@ export default function Footer() {
             </div>
           </div>
           <p className="footer__desc">
-            Registered LLP under Government of Telangana. 21+ years of excellence in civil,
-            electrical & mechanical construction. Building dreams with quality and trust.
+            Shree Pawanputra Projects is a registered LLP under the Government of Telangana (GSTIN: 36BIOPP9227R1Z3). 21+ years of
+            excellence in civil, electrical & mechanical construction.
           </p>
           <div className="footer__socials">
             <a href="#" aria-label="Facebook" className="footer__social-btn"><FacebookIcon /></a>
@@ -126,7 +126,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p>© 2024 Shree Pawanputra Projects. All Rights Reserved.</p>
-          <p>Registered LLP | Govt. of Telangana</p>
+          <p>Registered LLP | GSTIN: 36BIOPP9227R1Z3 | Govt. of Telangana</p>
         </div>
       </div>
     </footer>
