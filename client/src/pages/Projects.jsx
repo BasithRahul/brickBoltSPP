@@ -63,7 +63,7 @@ const projects = [
   { 
     id: 6, 
     title: "Nallagandla Guest House", 
-    category: "Residential", 
+    category: "Guest House", 
     location: "Guesthouse, at Nallagandla HUDA layout", 
     area: "Total Area: 258 sq.yds.", 
     year: "2023", 
@@ -137,9 +137,26 @@ const projects = [
     ],
     desc: "A prestigious residential development in Nallagandla featuring a double duplex house on a 258 SQ.YD plot. Designed for maximum space utilization and premium living experience." 
   },
+  { 
+    id: 11, 
+    title: "Vizag Layout Venture", 
+    category: "Ventures", 
+    location: "Vizag layout", 
+    area: "Luxury Residential Venture", 
+    year: "Ongoing", 
+    color: "#f59e0b", 
+    images: [
+      "/projects/venture/shared image (3).jpg",
+      "/projects/venture/shared image (4).jpg",
+      "/projects/venture/shared image (5).jpg",
+      "/projects/venture/shared image (6).jpg",
+      "/projects/venture/shared image (7).jpg"
+    ],
+    desc: "A sprawling luxury venture located in a prime Vizag layout. This project focuses on high-end infrastructure, landscaping, and community-centric urban planning." 
+  },
 ];
 
-const filters = ["All", "Residential", "Commercial"];
+const filters = ["All", "Residential", "Commercial", "Guest House", "Ventures"];
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("All");
