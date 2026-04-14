@@ -5,17 +5,17 @@ import "./Projects.css";
 const projects = [
   { 
     id: 1, 
-    title: "Vasanth Nagar Site", 
+    title: "Vasanth Nagar Residence", 
     category: "Residential", 
     location: "Plot no: 733, Vasanth nagar, Road no: 21, near Kukatpally Housing Board, Hyderabad.", 
-    area: "5 Floors, Each Floor 3BHK flats", 
-    year: "Ongoing", 
+    area: "G + 4 Floors", 
+    year: "2024", 
     color: "#1a6fc4", 
     images: [
-      "/projects/vasanth-nagar/img1.jpg",
-      "/projects/vasanth-nagar/img2.jpg"
+      "/projects/address1/img1.jpeg",
+      "/projects/address1/img2.jpeg"
     ],
-    desc: "A sleek, modern residential building in Vasanth Nagar featuring 5 floors with spacious 3BHK flats. This project showcases our commitment to aesthetic excellence and functional design." 
+    desc: "A sleek, modern residential building in Vasanth Nagar featuring a unique geometric facade. This project showcases our commitment to aesthetic excellence and functional structural design." 
   },
   { 
     id: 3, 
@@ -190,7 +190,7 @@ export default function ProjectsPage() {
           <span className="badge">Our Work</span>
           <h1 className="section-title">Projects & <span className="gradient-text">Portfolio</span></h1>
           <p style={{ color: "var(--text-muted)", maxWidth: 540, margin: "0 auto", fontSize: "1.1rem" }}>
-            100+ projects delivered across Telangana — every one built with pride.
+            40+ projects delivered across Telangana — every one built with pride.
           </p>
         </div>
       </section>
