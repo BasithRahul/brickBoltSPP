@@ -194,12 +194,12 @@
 }
 
 @media (max-width: 800px) {
-  .proj-modal { max-width: 500px; width: 95%; max-height: 90vh; }
-  .proj-modal__container { flex-direction: column; height: auto; max-height: 90vh; overflow-y: auto; }
-  .proj-modal__slider { height: 240px; flex-shrink: 0; }
-  .proj-modal__details { padding: 24px; flex: none; }
-  .proj-modal__title { font-size: 1.3rem; }
-  .proj-modal__close { top: 8px; right: 8px; width: 32px; height: 32px; background: rgba(0,0,0,0.6); }
+  .proj-modal { max-width: 500px; width: 92%; max-height: 85vh; margin: auto; }
+  .proj-modal__container { flex-direction: column; height: auto; max-height: 85vh; overflow-y: auto; }
+  .proj-modal__slider { height: 220px; flex-shrink: 0; }
+  .proj-modal__details { padding: 20px; flex: none; }
+  .proj-modal__title { font-size: 1.25rem; margin-top: 8px; }
+  .proj-modal__close { top: 12px; right: 12px; width: 32px; height: 32px; background: rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.3); }
 }
 
 @media (max-width: 640px) {
@@ -208,8 +208,8 @@
   .proj-grid { grid-template-columns: 1fr; gap: 24px; }
   .proj-card__body { text-align: center; }
   .proj-card__link { justify-content: center; width: 100%; }
-  .proj-modal-overlay { padding: 10px; align-items: flex-start; overflow-y: auto; }
-  .proj-modal { margin-top: 20px; border-radius: 16px; }
-  .proj-modal__slider { height: 200px; }
+  .proj-modal-overlay { padding: 16px 10px; align-items: center; overflow-y: hidden; }
+  .proj-modal { margin-top: 0; border-radius: 16px; width: 100%; }
+  .proj-modal__slider { height: 180px; }
 }
 
