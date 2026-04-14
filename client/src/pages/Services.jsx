@@ -104,7 +104,7 @@ export default function ServicesPage() {
     );
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [active]);
 
   const activeService = categories.find((c) => c.id === active);
 
