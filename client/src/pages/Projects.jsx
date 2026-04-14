@@ -15,7 +15,7 @@ const projects = [
       "/projects/vasanth-nagar/img1.jpg",
       "/projects/vasanth-nagar/img2.jpg"
     ],
-    desc: "Premium residential project in Vasanth Nagar featuring 5 floors with spacious 3BHK flats on each level. Modern construction with high-end structural integrity." 
+    desc: "A sleek, modern residential building in Vasanth Nagar featuring 5 floors with spacious 3BHK flats. This project showcases our commitment to aesthetic excellence and functional design." 
   },
   { 
     id: 3, 
