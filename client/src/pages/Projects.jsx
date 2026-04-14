@@ -7,32 +7,15 @@ const projects = [
     id: 1, 
     title: "Vasanth Nagar Site", 
     category: "Residential", 
-    location: "1) Vasanth Nagar site", 
+    location: "Plot no: 733, Vasanth nagar, Road no: 21, near Kukatpally Housing Board, Hyderabad.", 
     area: "5 Floors, Each Floor 3BHK flats", 
     year: "Ongoing", 
-    color: "#1a6fc4", 
-    images: [
-      "/projects/address1/img1.jpeg",
-      "/projects/address1/img2.jpeg",
-      "/projects/address1/img3.jpeg",
-      "/projects/address1/img4.jpeg",
-      "/projects/address1/img5.jpeg"
-    ],
-    desc: "Premium residential project in Vasanth Nagar featuring 5 floors with spacious 3BHK flats on each level. Modern construction with high-end structural integrity." 
-  },
-  { 
-    id: 2, 
-    title: "Vasanth Nagar Residence", 
-    category: "Residential", 
-    location: "Plot no: 733, Vasanth nagar, Road no: 21, near Kukatpally Housing Board, Hyderabad.", 
-    area: "G + 4 Floors", 
-    year: "2024", 
     color: "#1a6fc4", 
     images: [
       "/projects/vasanth-nagar/img1.jpg",
       "/projects/vasanth-nagar/img2.jpg"
     ],
-    desc: "A sleek, modern residential building featuring a unique geometric facade. This project showcases our commitment to aesthetic excellence and functional design." 
+    desc: "Premium residential project in Vasanth Nagar featuring 5 floors with spacious 3BHK flats on each level. Modern construction with high-end structural integrity." 
   },
   { 
     id: 3, 
