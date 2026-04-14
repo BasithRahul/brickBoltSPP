@@ -21,7 +21,7 @@ const projects = [
     id: 3, 
     title: "Nallagandla Residence", 
     category: "Residential", 
-    location: "Nallagandla 167 sq.yds.", 
+    location: "Plot no. MIG 533, Nallagandla 167 sq.yds.", 
     area: "5 Floors + Penthouse (2BHK each)", 
     year: "Ongoing", 
     color: "#1a6fc4", 
