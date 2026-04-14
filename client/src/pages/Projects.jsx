@@ -152,6 +152,28 @@ const projects = [
     ],
     desc: "A sprawling luxury venture located in a prime Vizag layout. This project focuses on high-end infrastructure, landscaping, and community-centric urban planning." 
   },
+  { 
+    id: 12, 
+    title: "Fab India Commercial", 
+    category: "Commercial", 
+    location: "Commercial HIG 92/C", 
+    area: "Parking + 5 Floors", 
+    year: "Ongoing", 
+    color: "#8b5cf6", 
+    images: ["/projects/fab india/shared image (10).jpg"],
+    desc: "A significant commercial project for Fab India featuring a Parking + 5 floor structure. Designed for premium retail and commercial space utilization in a prime HIG location." 
+  },
+  { 
+    id: 13, 
+    title: "Chennai Airport Hanger", 
+    category: "Ventures", 
+    location: "Arrakonam, near Chennai", 
+    area: "200' x 200' opening, Height 100'", 
+    year: "Completed", 
+    color: "#f59e0b", 
+    images: ["/projects/airport/shared image (11).jpg"],
+    desc: "A monumental aviation infrastructure venture featuring a massive airport hanger with 200' x 200' openings and 100' height. Specialized structural engineering for large-scale industrial projects." 
+  },
 ];
 
 const filters = ["All", "Residential", "Commercial", "Guest House", "Ventures"];
