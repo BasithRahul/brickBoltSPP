@@ -48,10 +48,10 @@ const serviceCategories = [
 ];
 
 const achievements = [
-  { value: "21+", label: "Years of Experience" },
-  { value: "100+", label: "Projects Delivered" },
-  { value: "500+", label: "Happy Clients" },
-  { value: "2017", label: "Established Year" },
+  { icon: <Clock size={40} />, value: "21+", label: "Years Experience" },
+  { icon: <Trophy size={40} />, value: "40+", label: "Projects Delivered" },
+  { icon: <Users size={40} />, value: "500+", label: "Happy Clients" },
+  { icon: <Star size={40} />, value: "2018", label: "Established Year" },
 ];
 
 export default function AboutPage() {
@@ -64,65 +64,81 @@ export default function AboutPage() {
     return () => observer.disconnect();
   }, []);
 
+  const achievements = [
+    { value: "21+", label: "Years Experience" },
+    { value: "40+", label: "Projects Delivered" },
+    { value: "500+", label: "Happy Clients" },
+    { value: "2018", label: "Established Year" },
+  ];
+
   return (
     <div className="about-page page-enter">
-      {/* ── Page Hero */}
-      <section className="page-hero">
-        <div className="page-hero__bg">
+      {/* ── HERO ─────────────────────────────────────────── */}
+      <section className="about-hero">
+        <div className="about-hero__bg">
           <div className="hero__grid" />
           <div className="hero__glow hero__glow--1" />
           <div className="hero__glow hero__glow--2" />
         </div>
-        <div className="container page-hero__content">
-          <span className="badge">About Us</span>
+        <div className="container about-hero__content">
+          <span className="badge">Our Story</span>
           <h1 className="section-title">
             Who We <span className="gradient-text">Are</span>
           </h1>
-          <p style={{ color: "var(--text-muted)", maxWidth: 600, fontSize: "1.1rem" }}>
-            A professionally managed construction company, building trust since 2017.
+          <p className="about-hero__desc">
+            A professionally managed construction company, building trust since
+            2018.
           </p>
         </div>
       </section>
 
-      {/* ── Company Overview */}
+      {/* ── CONTENT ─────────────────────────────────────── */}
       <section className="section-pad">
         <div className="container about-grid">
           <div className="about-text reveal">
-            <span className="badge">Our Story</span>
-            <h2 className="section-title" style={{ textAlign: "left" }}>
-              Shree Pawanputra <span className="gradient-text">Projects</span>
+            <span className="badge">Trust & Reliability</span>
+            <h2 className="section-title" style={{ textAlign: "left", fontSize: "2.4rem" }}>
+              Shree Pawanputra <br />
+              <span className="gradient-text">Projects</span>
             </h2>
             <p>
               Shree Pawanputra Projects is a professionally managed construction company registered
-              under the <strong>Government of Telangana as an LLP organization (GSTIN: 36BIOPP9227R1Z3)</strong>.
+              under the <strong>Government of Telangana as a Proprietorship (GSTIN: 36BIOPP9227R1Z3)</strong>.
             </p>
             <br />
             <p>
               With over <strong>21+ years of experience</strong> in the construction industry, we
-              specialize in delivering high-quality residential, commercial, and industrial projects.
-              Our foundation is built on <em>strength, reliability, and customer satisfaction</em>.
+              specialize in delivering high-quality residential, commercial, and industrial
+              projects. Our foundation is built on <strong>strength, reliability, and customer
+              satisfaction</strong>.
             </p>
             <br />
             <p>
-              Established in <strong>2017</strong>, our mission is to provide durable and innovative
+              Established in <strong>2018</strong>, our mission is to provide durable and innovative
               construction solutions tailored to each client's unique needs and vision.
             </p>
             <div className="about-commitment">
-              {["Quality Construction", "On-Time Delivery", "Customer Satisfaction"].map((item) => (
-                <div className="about-commitment__item" key={item}>
-                  <CheckCircle2 size={20} />
-                  <span>{item}</span>
+              <div className="commitment-item">
+                <CheckCircle2 size={18} /> Quality Construction
+              </div>
+              <div className="commitment-item">
+                <CheckCircle2 size={18} /> On-Time Delivery
+              </div>
+              <div className="commitment-item">
+                <CheckCircle2 size={18} /> Customer Satisfaction
+              </div>
+            </div>
+          </div>
+
+          <div className="about-stats">
+            <div className="about-achievements reveal">
+              {achievements.map((a) => (
+                <div className="achievement-card card" key={a.label}>
+                  <div className="achievement-card__value gradient-text">{a.value}</div>
+                  <div className="achievement-card__label">{a.label}</div>
                 </div>
               ))}
             </div>
-          </div>
-          <div className="about-achievements reveal">
-            {achievements.map((a) => (
-              <div className="achievement-card card" key={a.label}>
-                <div className="achievement-card__value gradient-text">{a.value}</div>
-                <div className="achievement-card__label">{a.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

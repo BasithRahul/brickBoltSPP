@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Home, Building2, Factory, Layers, Box, Zap, Settings, CheckCircle2 } from "lucide-react";
+import { Home, Building2, Factory, Layers, Box, Settings, CheckCircle2, Palette } from "lucide-react";
 import "./Services.css";
 
 const categories = [
@@ -14,23 +14,7 @@ const categories = [
       "RCC framing and masonry",
       "Brickwork & plastering",
       "Flooring & tiling",
-      "Roofing solutions",
       "Waterproofing",
-    ],
-  },
-  {
-    id: "electrical",
-    icon: <Zap size={32} />,
-    title: "Electrical Works",
-    color: "#f59e0b",
-    desc: "Safe, certified electrical installations for residential, commercial, and industrial properties.",
-    points: [
-      "Complete wiring systems",
-      "DB panels & earthing",
-      "Lighting design & fixtures",
-      "Power backup systems",
-      "Solar panel installations",
-      "CCTV & smart systems",
     ],
   },
   {
@@ -38,14 +22,27 @@ const categories = [
     icon: <Settings size={32} />,
     title: "Mechanical Works",
     color: "#8b5cf6",
-    desc: "Comprehensive mechanical installations covering HVAC, plumbing, and utility systems.",
+    desc: "Comprehensive mechanical installations covering HVAC and utility systems.",
     points: [
       "HVAC installations",
-      "Plumbing & sanitation",
       "Water supply systems",
       "Fire protection systems",
       "Lift & escalator coordination",
       "Industrial machinery setup",
+    ],
+  },
+  {
+    id: "interior",
+    icon: <Palette size={32} />,
+    title: "Interior Design",
+    color: "#ec4899",
+    desc: "Innovative and aesthetic interior design solutions that reflect your personality and style.",
+    points: [
+      "Residential interior design",
+      "Modular kitchen & wardrobes",
+      "False ceiling & lighting",
+      "Wall décor & paint finishes",
+      "Office & retail interiors",
     ],
   },
   {

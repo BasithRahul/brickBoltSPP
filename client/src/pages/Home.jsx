@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight, Phone, MessageSquare, Home, Building2,
   Factory, Layers, Box, CheckCircle2, Star, ChevronLeft, ChevronRight,
-  Trophy, Clock, Users, ShieldCheck, Send
+  Trophy, Clock, Users, ShieldCheck, Send, Palette
 } from "lucide-react";
 import "./Home.css";
 
 /* ── Data ──────────────────────────────────────────────── */
 const stats = [
   { icon: <Clock size={32} />, value: "21+", label: "Years Experience" },
-  { icon: <Trophy size={32} />, value: "100+", label: "Projects Completed" },
+  { icon: <Trophy size={32} />, value: "40+", label: "Projects Completed" },
   { icon: <Users size={32} />, value: "500+", label: "Happy Clients" },
   { icon: <ShieldCheck size={32} />, value: "100%", label: "Quality Assured" },
 ];
@@ -19,6 +19,7 @@ const services = [
   { icon: <Home size={28} />, title: "Residential Construction", desc: "Individual homes, villas, and apartments built with precision and care." },
   { icon: <Building2 size={28} />, title: "Commercial Buildings", desc: "Office complexes, malls, and commercial spaces tailored to your business." },
   { icon: <Factory size={28} />, title: "Industrial Projects", desc: "Warehouses, factories, and industrial buildings with structural excellence." },
+  { icon: <Palette size={28} />, title: "Interior Design", desc: "Innovative and aesthetic interior design solutions for modern living spaces." },
   { icon: <Layers size={28} />, title: "Structural Design", desc: "Expert structural planning and engineering for buildings of all scales." },
   { icon: <Box size={28} />, title: "AutoCAD & 3D Design", desc: "Detailed AutoCAD drawings, 3D visualizations, and elevation designs." },
 ];
@@ -105,7 +106,7 @@ export default function HomePage() {
         </div>
         <div className="container hero__content">
           <div className="hero__badge badge animate-fadeUp">
-            ✦ Registered LLP · Govt of Telangana · GSTIN: 36BIOPP9227R1Z3 ✦
+            ✦ Registered Proprietorship · Govt of Telangana · GSTIN: 36BIOPP9227R1Z3 ✦
           </div>
           <h1 className="hero__title animate-fadeUp anim-delay-1">
             Build Your<br />
@@ -215,10 +216,10 @@ export default function HomePage() {
               Trusted by <span className="gradient-text">Hundreds</span> of Families
             </h2>
             <p style={{ color: "var(--text-muted)", marginBottom: 32, lineHeight: 1.8 }}>
-              With 21+ years of dedicated service and a passionate team of engineers and designers, we deliver projects that stand the test of time. We are registered under Govt. of Telangana as a trusted LLP.
+              With 21+ years of dedicated service and a passionate team of engineers and designers, we deliver projects that stand the test of time. We are registered under Govt. of Telangana as a trusted Proprietorship.
             </p>
             <ul className="why-list">
-              {["Government Registered LLP", "21+ Years Track Record", "PPE & Site Safety Compliance", "On-Time Project Delivery", "Post-Handover Support"].map((item) => (
+              {["Government Registered Proprietorship", "21+ Years Track Record", "PPE & Site Safety Compliance", "On-Time Project Delivery", "Post-Handover Support"].map((item) => (
                 <li key={item}><CheckCircle2 size={18} /> {item}</li>
               ))}
             </ul>
@@ -235,7 +236,7 @@ export default function HomePage() {
                 <div className="why-visual__ring why-visual__ring--3" />
               </div>
               <div className="why-float-card why-float-card--1 glass">
-                <Trophy size={22} /> <span>100+ Projects</span>
+                <Trophy size={22} /> <span>40+ Projects</span>
               </div>
               <div className="why-float-card why-float-card--2 glass">
                 <Star size={22} className="hero__badge-star" /> <span>4.9 Rating</span>
@@ -324,6 +325,7 @@ export default function HomePage() {
                   <option>Residential Construction</option>
                   <option>Commercial Buildings</option>
                   <option>Industrial Projects</option>
+                  <option>Interior Design</option>
                   <option>Structural Design</option>
                   <option>AutoCAD & 3D Design</option>
                 </select>
