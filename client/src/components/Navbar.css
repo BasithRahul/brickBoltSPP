@@ -31,34 +31,44 @@
   gap: 12px;
   flex-shrink: 0;
 }
-.navbar__logo-icon {
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  border-radius: 10px;
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0; /* Gap is managed by divider and box */
+  flex-shrink: 0;
+}
+.navbar__logo-box {
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   flex-shrink: 0;
+}
+.navbar__logo-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--card-border);
+  margin: 0 16px;
+  opacity: 0.8;
 }
 .navbar__logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 .navbar__logo-name {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--text);
-}
-.navbar__logo-sub {
-  font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 800;
+  font-size: 1.05rem;
   color: var(--primary);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.navbar__logo-caption {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
 /* Desktop links */

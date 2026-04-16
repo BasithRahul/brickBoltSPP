@@ -233,6 +233,29 @@
   transform: translateY(-3px);
 }
 
+.visiting-card-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.visiting-card-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.visiting-card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1024px) {
   .about-grid { grid-template-columns: 1fr; }

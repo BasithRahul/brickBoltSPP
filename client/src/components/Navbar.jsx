@@ -31,12 +31,21 @@ export default function Navbar() {
       <div className="navbar__inner container">
         {/* Logo */}
         <Link to="/" className="navbar__logo" onClick={closeMenu}>
-          <div className="navbar__logo-icon">
-            <Building2 size={22} />
+          <div className="navbar__logo-box">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="sp-logo">
+              {/* Roof */}
+              <path d="M4 18L20 4L36 18H32V34H8V18H4Z" fill="#505050" />
+              <path d="M4 18L20 4L36 18V13L20 0L4 13V18Z" fill="#1a6fc4" />
+              <path d="M8 12L15 6L11 9.5V12H8Z" fill="#f59e0b" />
+              {/* Letters */}
+              <path d="M12 22H20V25H12V28H17V31H12" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              <path d="M23 22H28V26.5H23V31M28 26.5V31" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            </svg>
           </div>
+          <div className="navbar__logo-divider" />
           <div className="navbar__logo-text">
-            <span className="navbar__logo-name">Shree Pawanputra</span>
-            <span className="navbar__logo-sub">Projects</span>
+            <span className="navbar__logo-name">SHREE PAWAN PUTRA PROJECTS</span>
+            <span className="navbar__logo-caption">Civil, Electrical & Mechanical Constructions</span>
           </div>
         </Link>
 

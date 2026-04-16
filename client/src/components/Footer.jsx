@@ -50,17 +50,24 @@ export default function Footer() {
       <div className="footer__top container">
         <div className="footer__brand">
           <div className="footer__logo">
-            <div className="footer__logo-icon">
-              <Building2 size={22} />
+            <div className="footer__logo-box">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 18L20 4L36 18H32V34H8V18H4Z" fill="#505050" />
+                <path d="M4 18L20 4L36 18V13L20 0L4 13V18Z" fill="#1a6fc4" />
+                <path d="M8 12L15 6L11 9.5V12H8Z" fill="#f59e0b" />
+                <path d="M12 22H20V25H12V28H17V31H12" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                <path d="M23 22H28V26.5H23V31M28 26.5V31" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              </svg>
             </div>
+            <div className="footer__logo-divider" />
             <div>
-              <div className="footer__logo-name">Shree Pawanputra</div>
-              <div className="footer__logo-sub">Projects</div>
+              <div className="footer__logo-name">SHREE PAWAN PUTRA PROJECTS</div>
+              <div className="footer__logo-caption">Civil, Electrical & Mechanical Constructions</div>
             </div>
           </div>
           <p className="footer__desc">
-            Shree Pawanputra Projects is a registered Proprietorship under the Government of Telangana (GSTIN: 36BIOPP9227R1Z3). 21+ years of
-            excellence in civil, electrical & mechanical construction.
+            Shree Pawan Putra Projects is a registered Proprietorship under the Government of Telangana (GSTIN: 36BIOPP9227R1Z3). 21+ years of
+            excellence in infrastructure development.
           </p>
           <div className="footer__socials">
             <a href="#" aria-label="Facebook" className="footer__social-btn"><FacebookIcon /></a>

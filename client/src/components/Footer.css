@@ -19,31 +19,37 @@
 .footer__logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 0;
+  margin-bottom: 24px;
 }
-.footer__logo-icon {
+.footer__logo-box {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  flex-shrink: 0;
+}
+.footer__logo-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--card-border);
+  margin: 0 16px;
+  opacity: 0.8;
 }
 .footer__logo-name {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1rem;
-  color: var(--text);
-}
-.footer__logo-sub {
-  font-size: 0.72rem;
-  font-weight: 500;
   color: var(--primary);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.footer__logo-caption {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 .footer__desc {
   font-size: 0.9rem;

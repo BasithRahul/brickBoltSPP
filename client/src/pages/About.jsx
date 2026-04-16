@@ -175,6 +175,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Visiting Card Section ─────────────────────── */}
+      <section className="section-pad">
+        <div className="container" style={{ textAlign: "center" }}>
+          <div className="reveal" style={{ marginBottom: 40 }}>
+            <span className="badge">Contact Reference</span>
+            <h2 className="section-title">Official <span className="gradient-text">Visiting Card</span></h2>
+            <p style={{ color: "var(--text-muted)", maxWidth: 600, margin: "0 auto" }}>
+              For official records and direct contact, please refer to our certified business credentials.
+            </p>
+          </div>
+          <div className="visiting-card-box reveal card">
+            <img src="/src/assets/visiting card.jpeg" alt="Shree Pawan Putra Projects Visiting Card" className="visiting-card-img" />
+          </div>
+        </div>
+      </section>
+
       {/* ── Team */}
       <section className="section-pad">
         <div className="container">
