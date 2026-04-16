@@ -7,7 +7,7 @@ const plans = [
   {
     id: "basic",
     name: "Basic",
-    price: "₹1,800",
+    price: "₹2,050+",
     unit: "/sqft",
     popular: false,
     color: "#6b7280",
@@ -26,7 +26,7 @@ const plans = [
   {
     id: "classic",
     name: "Classic",
-    price: "₹2,200",
+    price: "₹2,400+",
     unit: "/sqft",
     popular: true,
     color: "#1a6fc4",
@@ -46,7 +46,7 @@ const plans = [
   {
     id: "premium",
     name: "Premium",
-    price: "₹2,500+",
+    price: "₹2,700+",
     unit: "/sqft",
     popular: false,
     color: "#f59e0b",
