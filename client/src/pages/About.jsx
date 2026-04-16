@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Users, Wrench, ShieldCheck, Target, CheckCircle2, Building2, Award, Clock, Trophy, Star } from "lucide-react";
+import { Users, Wrench, ShieldCheck, Target, CheckCircle2, Building2, Award, Clock, Trophy, Star, Mail } from "lucide-react";
+import venkatImg from "../assets/venkat.jpg";
 import "./About.css";
 
 const teamRoles = [
@@ -131,6 +132,44 @@ export default function AboutPage() {
                   <div className="achievement-card__label">{a.label}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Leadership/Founder Profile ─────────────────────── */}
+      <section className="section-pad bg-subtle">
+        <div className="container">
+          <div className="leadership-card card reveal">
+            <div className="leadership-card__img-box">
+              <img src={venkatImg} alt="Mr. Venkat - Proprietor" className="leadership-card__img" />
+              <div className="leadership-card__badge">Proprietor</div>
+            </div>
+            <div className="leadership-card__content">
+              <span className="badge">Leadership</span>
+              <h2 className="leadership-card__name">Mr. Venkat</h2>
+              <p className="leadership-card__tagline">B.Tech Civil Engineering | 21+ Years Experience</p>
+              <div className="leadership-card__divider" />
+              <p className="leadership-card__bio">
+                As the visionary leader behind Shree Pawanputra Projects, Mr. Venkat brings over 
+                two decades of structural expertise and field experience to every project. 
+                Under his guidance, the company has grown from a local proprietorship into 
+                a trusted name in Telangana construction, known for zero-defect delivery 
+                and absolute transparency.
+              </p>
+              <div className="leadership-card__commitment">
+                <div className="commitment-tag"><CheckCircle2 size={16} /> Field Excellence</div>
+                <div className="commitment-tag"><CheckCircle2 size={16} /> Technical Integrity</div>
+                <div className="commitment-tag"><CheckCircle2 size={16} /> Client-First Vision</div>
+              </div>
+              <div className="leadership-card__actions">
+                <a href="mailto:info@sreepawanputra.com" className="btn btn-secondary">
+                  <Mail size={18} /> Contact Office
+                </a>
+                <div className="leadership-card__social">
+                  <a href="mailto:info@sreepawanputra.com" className="social-link"><Mail size={20} /></a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

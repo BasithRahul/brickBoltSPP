@@ -174,6 +174,48 @@ const projects = [
     images: ["/projects/airport/shared image (11).jpg"],
     desc: "A monumental aviation infrastructure venture featuring a massive airport hanger with 200' x 200' openings and 100' height. Specialized structural engineering for large-scale industrial projects." 
   },
+  { 
+    id: 14, 
+    title: "Nallagandla HIG 97/E Residence", 
+    category: "Residential", 
+    location: "Nallagandla HIG 97/E", 
+    area: "517 sq.yds., Parking + 5 Floors", 
+    year: "Ongoing", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/new_1/image.jpg",
+      "/projects/new_1/image.png"
+    ],
+    desc: "A premium residential development at Nallagandla HIG 97/E featuring a Parking + 5 floor structure on a 517 sq.yds plot. Each floor is meticulously designed to house two spacious 3BHK units." 
+  },
+  { 
+    id: 15, 
+    title: "LB Nagar Residential Development", 
+    category: "Residential", 
+    location: "LB Nagar", 
+    area: "400 sq.yds., Parking + 5 Floors", 
+    year: "Ongoing", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/new_2/image (1).png",
+      "/projects/new_2/image (2).png"
+    ],
+    desc: "An upcoming residential development in LB Nagar on a 400 sq.yds plot. Featuring a Parking + 5 floor structure, each floor consists of two well-designed 2BHK flats, optimized for urban living." 
+  },
+  { 
+    id: 16, 
+    title: "Sriram Nagar Residential Development", 
+    category: "Residential", 
+    location: "Sriram Nagar, Kondapur", 
+    area: "200 sq.yds., Parking + 3 Floors", 
+    year: "Ongoing", 
+    color: "#1a6fc4", 
+    images: [
+      "/projects/new_3/image.png",
+      "/projects/new_3/image (1).png"
+    ],
+    desc: "A boutique residential project in Sriram Nagar, Kondapur on a 200 sq.yds plot. This development features a Parking + 3 floor structure, with each floor dedicated to a spacious 3BHK flat, combining comfort with modern urban design." 
+  },
 ];
 
 const filters = ["All", "Residential", "Commercial", "Guest House", "Ventures"];
