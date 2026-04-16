@@ -273,80 +273,82 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="projects-page page-enter">
-      <section className="page-hero">
-        <div className="page-hero__bg">
-          <div className="hero__grid" />
-          <div className="hero__glow hero__glow--1" />
-          <div className="hero__glow hero__glow--2" />
-        </div>
-        <div className="container page-hero__content">
-          <span className="badge">Our Work</span>
-          <h1 className="section-title">Projects & <span className="gradient-text">Portfolio</span></h1>
-          <p style={{ color: "var(--text-muted)", maxWidth: 540, margin: "0 auto", fontSize: "1.1rem" }}>
-            40+ projects delivered across Telangana — every one built with pride.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-pad">
-        <div className="container">
-          {/* Filter Tabs */}
-          <div className="proj-filters reveal">
-            {filters.map((f) => (
-              <button key={f} id={`filter-${f.toLowerCase()}`}
-                className={`proj-filter${filter === f ? " proj-filter--active" : ""}`}
-                onClick={() => setFilter(f)}>
-                {f}
-              </button>
-            ))}
+    <>
+      <div className="projects-page page-enter">
+        <section className="page-hero">
+          <div className="page-hero__bg">
+            <div className="hero__grid" />
+            <div className="hero__glow hero__glow--1" />
+            <div className="hero__glow hero__glow--2" />
           </div>
-
-          {/* Grid */}
-          <div className="proj-grid">
-            {filtered.map((p, i) => {
-              const activeIdx = cardIndices[p.id] || 0;
-              const hasImages = p.images && p.images.length > 0;
-              
-              return (
-                <div key={p.id} className="proj-card card reveal"
-                  style={{ transitionDelay: `${i * 0.05}s` }}
-                  onClick={() => setSelected(p)}>
-                  <div className="proj-card__visual" style={{ background: hasImages ? "none" : `${p.color}15` }}>
-                    {hasImages ? (
-                      <>
-                        <img src={p.images[activeIdx]} alt={p.title} className="proj-card__img" />
-                        {p.images.length > 1 && (
-                          <div className="proj-card__nav">
-                            <button className="proj-card__nav-btn" onClick={(e) => handlePrev(e, p)}>
-                              <ChevronLeft size={16} />
-                            </button>
-                            <button className="proj-card__nav-btn" onClick={(e) => handleNext(e, p)}>
-                              <ChevronRight size={16} />
-                            </button>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="proj-card__icon" style={{ color: p.color }}>{p.icon}</div>
-                    )}
-                  </div>
-                  <div className="proj-card__body">
-                    <h3 className="proj-card__title">{p.title}</h3>
-                    <p className="proj-card__meta">📍 {p.location}</p>
-                    <p className="proj-card__meta">📐 {p.area}</p>
-                    <button className="proj-card__link">
-                      View Details <ArrowRight size={14} />
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="container page-hero__content">
+            <span className="badge">Our Work</span>
+            <h1 className="section-title">Projects & <span className="gradient-text">Portfolio</span></h1>
+            <p style={{ color: "var(--text-muted)", maxWidth: 540, margin: "0 auto", fontSize: "1.1rem" }}>
+              40+ projects delivered across Telangana — every one built with pride.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Modal */}
+        <section className="section-pad">
+          <div className="container">
+            {/* Filter Tabs */}
+            <div className="proj-filters reveal">
+              {filters.map((f) => (
+                <button key={f} id={`filter-${f.toLowerCase()}`}
+                  className={`proj-filter${filter === f ? " proj-filter--active" : ""}`}
+                  onClick={() => setFilter(f)}>
+                  {f}
+                </button>
+              ))}
+            </div>
+
+            {/* Grid */}
+            <div className="proj-grid">
+              {filtered.map((p, i) => {
+                const activeIdx = cardIndices[p.id] || 0;
+                const hasImages = p.images && p.images.length > 0;
+                
+                return (
+                  <div key={p.id} className="proj-card card reveal"
+                    style={{ transitionDelay: `${i * 0.05}s` }}
+                    onClick={() => setSelected(p)}>
+                    <div className="proj-card__visual" style={{ background: hasImages ? "none" : `${p.color}15` }}>
+                      {hasImages ? (
+                        <>
+                          <img src={p.images[activeIdx]} alt={p.title} className="proj-card__img" />
+                          {p.images.length > 1 && (
+                            <div className="proj-card__nav">
+                              <button className="proj-card__nav-btn" onClick={(e) => handlePrev(e, p)}>
+                                <ChevronLeft size={16} />
+                              </button>
+                              <button className="proj-card__nav-btn" onClick={(e) => handleNext(e, p)}>
+                                <ChevronRight size={16} />
+                              </button>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="proj-card__icon" style={{ color: p.color }}>{p.icon}</div>
+                      )}
+                    </div>
+                    <div className="proj-card__body">
+                      <h3 className="proj-card__title">{p.title}</h3>
+                      <p className="proj-card__meta">📍 {p.location}</p>
+                      <p className="proj-card__meta">📐 {p.area}</p>
+                      <button className="proj-card__link">
+                        View Details <ArrowRight size={14} />
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Modal - Moved outside transformed container */}
       {selected && (
         <div className="proj-modal-overlay" onClick={() => setSelected(null)}>
           <div className="proj-modal card" onClick={(e) => e.stopPropagation()}>
@@ -424,6 +426,6 @@ export default function ProjectsPage() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
