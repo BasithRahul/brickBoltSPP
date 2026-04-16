@@ -52,7 +52,7 @@ const projects = [
     category: "Residential", 
     location: "Plot no. MIG 774, Nallagandla 258 sq.yds.", 
     area: "4 Floors (3 BHK each)", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#22c55e", 
     images: [
       "/projects/address5/img1.jpeg",
@@ -80,7 +80,7 @@ const projects = [
     category: "Commercial", 
     location: "Nallagandla 620 sq.yds.", 
     area: "Parking + 5 Floors (PT Beams)", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#1a6fc4", 
     images: [
       "/projects/nallagandla-school/img1.jpeg",
@@ -158,7 +158,7 @@ const projects = [
     category: "Commercial", 
     location: "Commercial HIG 92/C", 
     area: "Parking + 5 Floors", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#8b5cf6", 
     images: ["/projects/fab india/shared image (10).jpg"],
     desc: "A significant commercial project for Fab India featuring a Parking + 5 floor structure. Designed for premium retail and commercial space utilization in a prime HIG location." 
