@@ -79,8 +79,8 @@
   animation: fadeIn 0.2s ease;
 }
 .proj-modal {
-  max-width: 780px;
-  width: 100%;
+  max-width: 950px;
+  width: 95%;
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
@@ -107,7 +107,7 @@
 
 .proj-modal__container {
   display: flex;
-  height: 480px;
+  height: 580px;
   max-height: 85vh;
 }
 
@@ -124,8 +124,8 @@
 
 /* DETAILS (Right) */
 .proj-modal__details {
-  flex: 1;
-  padding: 40px;
+  flex: 1.1;
+  padding: 48px;
   display: flex;
   flex-direction: column;
   background: var(--card);
