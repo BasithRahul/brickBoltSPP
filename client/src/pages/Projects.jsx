@@ -9,7 +9,7 @@ const projects = [
     category: "Residential", 
     location: "Plot no: 733, Vasanth nagar, Road no: 21, near Kukatpally Housing Board, Hyderabad.", 
     area: "G + 4 Floors", 
-    year: "2024", 
+    year: "Ongoing", 
     color: "#1a6fc4", 
     images: [
       "/projects/address1/img1.jpeg",
