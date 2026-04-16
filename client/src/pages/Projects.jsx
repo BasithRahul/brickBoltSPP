@@ -413,7 +413,7 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="proj-modal__footer">
-                  <a href="tel:+919000100889" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+                  <a href="tel:+919000100889" className="btn btn-primary">
                     Enquire Now <ArrowRight size={18} />
                   </a>
                 </div>
