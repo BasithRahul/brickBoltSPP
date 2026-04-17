@@ -37,7 +37,7 @@ const projects = [
     category: "Commercial", 
     location: "Mig-140, Nallagandla HUDA layout", 
     area: "Site Area: 258 sq.yds.", 
-    year: "2023", 
+    year: "Completed", 
     color: "#8b5cf6", 
     images: [
       "/projects/Skanda/img1.jpeg",
@@ -66,7 +66,7 @@ const projects = [
     category: "Guest House", 
     location: "Plot no. MIG 532, Nallagandla HUDA layout", 
     area: "Total Area: 258 sq.yds.", 
-    year: "2023", 
+    year: "Ongoing", 
     color: "#06b6d4", 
     images: [
       "/projects/guest-house/img1.jpeg",
@@ -94,7 +94,7 @@ const projects = [
     category: "Commercial", 
     location: "Kollur Commercial building, 1200 sq.yds.", 
     area: "Cellar + G + 4 Floors (PT Slab)", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#8b5cf6", 
     images: [
       "/projects/Address8/img1.jpeg",

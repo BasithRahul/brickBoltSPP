@@ -92,6 +92,20 @@ const categories = [
       "Approval drawings",
     ],
   },
+  {
+    id: "execution",
+    icon: <CheckCircle2 size={32} />,
+    title: "Site Execution Works",
+    color: "#1a6fc4",
+    desc: "Professional site management and technical supervision ensuring projects are executed as per architectural and structural blueprints.",
+    points: [
+      "Providing of Engineers and Supervisors as per Drawings and Site Implementation",
+      "Daily site progress monitoring",
+      "Quality control & material verification",
+      "Safety protocol enforcement",
+      "Vendor coordination & management",
+    ],
+  },
 ];
 
 export default function ServicesPage() {
