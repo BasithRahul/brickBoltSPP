@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Users, Wrench, ShieldCheck, Target, CheckCircle2, Building2, Award, Clock, Trophy, Star, Mail } from "lucide-react";
 import venkatImg from "../assets/venkat.jpg";
+import logoImg from "../assets/logo-hd.png";
 import "./About.css";
 
 const teamRoles = [
@@ -188,13 +189,7 @@ export default function AboutPage() {
             <div className="business-card__header">
               <div className="business-card__branding">
                 <div className="business-card__logo-box">
-                  <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 5L90 35V45H50V5Z" fill="#1e73be" />
-                    <path d="M10 35L50 5V45H18L10 35Z" fill="#ff9900" />
-                    <path d="M10 45H90V95H10V45Z" fill="#555555" />
-                    <path d="M20 55H42V63H30V68H42V85H20V77H32V71H20V55Z" fill="white" />
-                    <path d="M54 55H78V75H64V85H54V55ZM64 63H68V67H64V63Z" fill="white" />
-                  </svg>
+                  <img src={logoImg} alt="Shree Pawanputra Projects" className="business-card__logo-img" />
                 </div>
                 <div className="business-card__company">SHREE PAWAN PUTRA PROJECTS</div>
                 <div className="business-card__caption">Civil, Electrical & Mechanical Constructions</div>

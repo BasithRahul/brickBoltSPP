@@ -38,12 +38,20 @@
   flex-shrink: 0;
 }
 .navbar__logo-box {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.navbar__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply; /* Helps blend the white background of the image with the navbar */
 }
 .navbar__logo-divider {
   width: 1px;

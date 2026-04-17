@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { Sun, Moon, Menu, X, Building2, Phone } from "lucide-react";
+import logoImg from "../assets/logo-hd.png";
 import "./Navbar.css";
 
 const navLinks = [
@@ -32,18 +33,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="navbar__logo" onClick={closeMenu}>
           <div className="navbar__logo-box">
-            <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Roof Right (Teal/Blue) */}
-              <path d="M50 5L90 35V45H50V5Z" fill="#1e73be" />
-              {/* Roof Left Peak (Orange) */}
-              <path d="M10 35L50 5V45H18L10 35Z" fill="#ff9900" />
-              {/* Body (Gray) */}
-              <path d="M10 45H90V95H10V45Z" fill="#555555" />
-              {/* Stylized 'S' */}
-              <path d="M20 55H42V63H30V68H42V85H20V77H32V71H20V55Z" fill="white" />
-              {/* Stylized 'P' */}
-              <path d="M54 55H78V75H64V85H54V55ZM64 63H68V67H64V63Z" fill="white" />
-            </svg>
+            <img src={logoImg} alt="Shree Pawanputra Projects" className="navbar__logo-img" />
           </div>
           <div className="navbar__logo-divider" />
           <div className="navbar__logo-text">
