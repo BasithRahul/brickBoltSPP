@@ -79,7 +79,7 @@ export default function HomePage() {
     e.preventDefault();
     setFormStatus("loading");
     try {
-      const res = await fetch("http://localhost:5000/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

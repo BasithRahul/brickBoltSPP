@@ -31,12 +31,12 @@
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
+  background: #ffffff; /* Ensures logo is visible correctly in dark mode */
 }
 .footer__logo-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 .footer__logo-divider {
   width: 1px;

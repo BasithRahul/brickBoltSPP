@@ -190,7 +190,7 @@ const projects = [
   },
   { 
     id: 15, 
-    title: "LB Nagar Residential Development", 
+    title: "LB Nagar Residential", 
     category: "Residential", 
     location: "LB Nagar", 
     area: "400 sq.yds., Parking + 5 Floors", 
@@ -204,7 +204,7 @@ const projects = [
   },
   { 
     id: 16, 
-    title: "Sriram Nagar Residential Development", 
+    title: "Sriram Nagar Residential", 
     category: "Residential", 
     location: "Sriram Nagar, Kondapur", 
     area: "200 sq.yds., Parking + 3 Floors", 

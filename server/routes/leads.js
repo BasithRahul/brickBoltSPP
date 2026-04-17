@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Lead = require("../models/Lead");
+
+// Memory store (Temporary - will be reset on server restart)
+let leads = [];
 
 // POST /api/leads — create a new lead
 router.post("/", async (req, res) => {
@@ -9,10 +11,22 @@ router.post("/", async (req, res) => {
     if (!name || !phone) {
       return res.status(400).json({ error: "Name and phone are required." });
     }
-    const lead = await Lead.create({ name, phone, email, service, message });
-    res.status(201).json({ success: true, lead });
+    const lead = { 
+      id: Date.now().toString(),
+      name, 
+      phone, 
+      email, 
+      service, 
+      message,
+      createdAt: new Date()
+    };
+    
+    console.log("📝 Lead received (No DB connected):", lead);
+    leads.push(lead);
+    
+    res.status(201).json({ success: true, message: "Lead logged (Memory only)", lead });
   } catch (err) {
-    console.error("Lead creation error:", err);
+    console.error("Lead submission error:", err);
     res.status(500).json({ error: "Server error" });
   }
 });
@@ -20,7 +34,6 @@ router.post("/", async (req, res) => {
 // GET /api/leads — retrieve all leads (admin)
 router.get("/", async (req, res) => {
   try {
-    const leads = await Lead.find().sort({ createdAt: -1 });
     res.json(leads);
   } catch (err) {
     res.status(500).json({ error: "Server error" });
@@ -30,8 +43,14 @@ router.get("/", async (req, res) => {
 // PATCH /api/leads/:id — update lead status
 router.patch("/:id", async (req, res) => {
   try {
-    const lead = await Lead.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(lead);
+    const { id } = req.params;
+    const index = leads.findIndex(l => l.id === id);
+    if (index !== -1) {
+      leads[index] = { ...leads[index], ...req.body };
+      res.json(leads[index]);
+    } else {
+      res.status(404).json({ error: "Lead not found" });
+    }
   } catch (err) {
     res.status(500).json({ error: "Server error" });
   }

@@ -10,7 +10,7 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("loading");
     try {
-      const res = await fetch("http://localhost:5000/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -67,7 +67,7 @@ export default function ContactPage() {
                   <div className="contact-info-icon"><Mail size={22} /></div>
                   <div>
                     <strong>Email</strong>
-                    <p><a href="mailto:info@sreepawanputra.com">info@sreepawanputra.com</a></p>
+                    <p><a href="mailto:sppprojects9@gmail.com">sppprojects9@gmail.com</a></p>
                   </div>
                 </div>
                 <div className="contact-info-item">

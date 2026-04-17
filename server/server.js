@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
@@ -18,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/leads", require("./routes/leads"));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Shree Pawanputra Projects API is running ✅" });
+  res.json({ message: "Shree Pawanputra Projects API is running ✅ (No Database Mode)" });
 });
 
 // 404 handler
@@ -26,17 +25,12 @@ app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
 
-// ── Connect MongoDB & Start Server ────────────────────────
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/spp_projects";
-
-mongoose.connect(MONGODB_URI)
-  .then(() => {
-    console.log("✅ MongoDB connected");
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running at http://localhost:${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.error("❌ MongoDB connection error:", err.message);
-    process.exit(1);
+// ── Export/Start ──────────────────────────────────────────
+// Only listen if not running in a Vercel/Production environment
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
   });
+}
+
+module.exports = app;

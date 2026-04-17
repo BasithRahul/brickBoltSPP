@@ -111,7 +111,7 @@ export default function Footer() {
             </li>
             <li>
               <Mail size={16} className="footer__contact-icon" />
-              <a href="mailto:info@sreepawanputra.com">info@sreepawanputra.com</a>
+              <a href="mailto:sppprojects9@gmail.com">sppprojects9@gmail.com</a>
             </li>
           </ul>
           <a

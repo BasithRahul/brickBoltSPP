@@ -165,11 +165,11 @@ export default function AboutPage() {
                 <div className="commitment-tag"><CheckCircle2 size={16} /> Client-First Vision</div>
               </div>
               <div className="leadership-card__actions">
-                <a href="mailto:info@sreepawanputra.com" className="btn btn-secondary">
+                <a href="mailto:sppprojects9@gmail.com" className="btn btn-secondary">
                   <Mail size={18} /> Contact Office
                 </a>
                 <div className="leadership-card__social">
-                  <a href="mailto:info@sreepawanputra.com" className="social-link"><Mail size={20} /></a>
+                  <a href="mailto:sppprojects9@gmail.com" className="social-link"><Mail size={20} /></a>
                 </div>
               </div>
             </div>
