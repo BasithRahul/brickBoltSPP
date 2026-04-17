@@ -111,7 +111,7 @@ const projects = [
     category: "Residential", 
     location: "Ayyappa Society 300 sq.yds.", 
     area: "6 Floors + Penthouse", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#1a6fc4", 
     images: [
       "/projects/Adress10/img3.jpeg",
@@ -180,7 +180,7 @@ const projects = [
     category: "Residential", 
     location: "Nallagandla HIG 97/E", 
     area: "517 sq.yds., Parking + 5 Floors", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#1a6fc4", 
     images: [
       "/projects/new_1/image.jpg",
@@ -194,7 +194,7 @@ const projects = [
     category: "Residential", 
     location: "LB Nagar", 
     area: "400 sq.yds., Parking + 5 Floors", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#1a6fc4", 
     images: [
       "/projects/new_2/image (1).png",
@@ -208,7 +208,7 @@ const projects = [
     category: "Residential", 
     location: "Sriram Nagar, Kondapur", 
     area: "200 sq.yds., Parking + 3 Floors", 
-    year: "Ongoing", 
+    year: "Completed", 
     color: "#1a6fc4", 
     images: [
       "/projects/new_3/image.png",

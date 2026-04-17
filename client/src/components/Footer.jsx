@@ -51,12 +51,17 @@ export default function Footer() {
         <div className="footer__brand">
           <div className="footer__logo">
             <div className="footer__logo-box">
-              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 4L36 18H32V34H8V18H4Z" fill="#505050" />
-                <path d="M4 18L20 4L36 18V13L20 0L4 13V18Z" fill="#1a6fc4" />
-                <path d="M8 12L15 6L11 9.5V12H8Z" fill="#f59e0b" />
-                <path d="M12 22H20V25H12V28H17V31H12" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                <path d="M23 22H28V26.5H23V31M28 26.5V31" stroke="white" strokeWidth="2" strokeLinecap="round" />
+              <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Roof Right (Teal/Blue) */}
+                <path d="M50 5L90 35V45H50V5Z" fill="#1e73be" />
+                {/* Roof Left Peak (Orange) */}
+                <path d="M10 35L50 5V45H18L10 35Z" fill="#ff9900" />
+                {/* Body (Gray) */}
+                <path d="M10 45H90V95H10V45Z" fill="#555555" />
+                {/* Stylized 'S' */}
+                <path d="M20 55H42V63H30V68H42V85H20V77H32V71H20V55Z" fill="white" />
+                {/* Stylized 'P' */}
+                <path d="M54 55H78V75H64V85H54V55ZM64 63H68V67H64V63Z" fill="white" />
               </svg>
             </div>
             <div className="footer__logo-divider" />

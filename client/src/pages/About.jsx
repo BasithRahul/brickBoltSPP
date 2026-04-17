@@ -111,6 +111,7 @@ export default function AboutPage() {
               Established in <strong>2018</strong>, our mission is to provide durable and innovative
               construction solutions tailored to each client's unique needs and vision.
             </p>
+
             <div className="about-commitment">
               <div className="commitment-item">
                 <CheckCircle2 size={18} /> Quality Construction
@@ -142,16 +143,16 @@ export default function AboutPage() {
         <div className="container">
           <div className="leadership-card card reveal">
             <div className="leadership-card__img-box">
-              <img src={venkatImg} alt="Mr. Venkat - Proprietor" className="leadership-card__img" />
+              <img src={venkatImg} alt="P V V Rama Raju - Proprietor" className="leadership-card__img" />
               <div className="leadership-card__badge">Proprietor</div>
             </div>
             <div className="leadership-card__content">
               <span className="badge">Leadership</span>
-              <h2 className="leadership-card__name">Mr. Venkat</h2>
+              <h2 className="leadership-card__name">P V V Rama Raju</h2>
               <p className="leadership-card__tagline">B.Tech Civil Engineering | 21+ Years Experience</p>
               <div className="leadership-card__divider" />
               <p className="leadership-card__bio">
-                As the visionary leader behind Shree Pawanputra Projects, Mr. Venkat brings over 
+                As the visionary leader behind Shree Pawanputra Projects, P V V Rama Raju brings over 
                 two decades of structural expertise and field experience to every project. 
                 Under his guidance, the company has grown from a local proprietorship into 
                 a trusted name in Telangana construction, known for zero-defect delivery 
@@ -175,18 +176,58 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Visiting Card Section ─────────────────────── */}
-      <section className="section-pad">
-        <div className="container" style={{ textAlign: "center" }}>
-          <div className="reveal" style={{ marginBottom: 40 }}>
-            <span className="badge">Contact Reference</span>
-            <h2 className="section-title">Official <span className="gradient-text">Visiting Card</span></h2>
-            <p style={{ color: "var(--text-muted)", maxWidth: 600, margin: "0 auto" }}>
-              For official records and direct contact, please refer to our certified business credentials.
-            </p>
+      {/* ── Business Card Section ────────────────────────── */}
+      <section className="business-card-section reveal">
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: 40 }}>
+            <span className="badge">Digital Reference</span>
+            <h2 className="section-title">Official <span className="gradient-text">Business Card</span></h2>
           </div>
-          <div className="visiting-card-box reveal card">
-            <img src="/src/assets/visiting card.jpeg" alt="Shree Pawan Putra Projects Visiting Card" className="visiting-card-img" />
+          
+          <div className="business-card">
+            <div className="business-card__header">
+              <div className="business-card__branding">
+                <div className="business-card__logo-box">
+                  <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5L90 35V45H50V5Z" fill="#1e73be" />
+                    <path d="M10 35L50 5V45H18L10 35Z" fill="#ff9900" />
+                    <path d="M10 45H90V95H10V45Z" fill="#555555" />
+                    <path d="M20 55H42V63H30V68H42V85H20V77H32V71H20V55Z" fill="white" />
+                    <path d="M54 55H78V75H64V85H54V55ZM64 63H68V67H64V63Z" fill="white" />
+                  </svg>
+                </div>
+                <div className="business-card__company">SHREE PAWAN PUTRA PROJECTS</div>
+                <div className="business-card__caption">Civil, Electrical & Mechanical Constructions</div>
+              </div>
+              
+              <div className="business-card__person">
+                <div className="business-card__name">P V V RAMA RAJU</div>
+                <div className="business-card__title">Civil Engineer</div>
+              </div>
+            </div>
+
+            <div className="business-card__contact">
+              9000 100 889
+            </div>
+
+            <div className="business-card__details">
+              <div className="business-card__info-row">
+                <span className="business-card__info-label">Office:</span>
+                <span className="business-card__info-value">
+                  Unit.No.810 & 811, Sy. No.1050, Manjeera Trinity Corporate, JNTU Road, Kukatpally, Hyd.
+                </span>
+              </div>
+              <div className="business-card__info-row">
+                <span className="business-card__info-label">Email:</span>
+                <span className="business-card__info-value">ramaraju.srkr@gmail.com</span>
+              </div>
+            </div>
+
+            <div className="business-card__footer">
+              <a href="https://www.spprojects.in" className="business-card__website" target="_blank" rel="noopener noreferrer">
+                www.spprojects.in
+              </a>
+            </div>
           </div>
         </div>
       </section>
