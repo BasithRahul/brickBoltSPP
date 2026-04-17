@@ -61,7 +61,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="footer__desc">
-            Shree Pawan Putra Projects is a registered Proprietorship under the Government of Telangana (GSTIN: 36BIOPP9227R1Z3). 21+ years of
+            Shree Pawan Putra Projects is a registered Proprietorship under the Government of Telangana. 21+ years of
             excellence in infrastructure development.
           </p>
           <div className="footer__socials">
@@ -128,7 +128,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p>© 2024 Shree Pawanputra Projects. All Rights Reserved.</p>
-          <p>Registered LLP | GSTIN: 36BIOPP9227R1Z3 | Govt. of Telangana</p>
+          <p>Registered Proprietorship | Govt. of Telangana</p>
         </div>
       </div>
     </footer>
