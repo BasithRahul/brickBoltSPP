@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { Sun, Moon, Menu, X, Building2, Phone } from "lucide-react";
-import logoImg from "../assets/logo-hd.png";
+import logoImg from "../assets/splogo.png";
 import "./Navbar.css";
 
 const navLinks = [

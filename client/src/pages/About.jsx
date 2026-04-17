@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Users, Wrench, ShieldCheck, Target, CheckCircle2, Building2, Award, Clock, Trophy, Star, Mail } from "lucide-react";
 import venkatImg from "../assets/venkat.jpg";
-import logoImg from "../assets/logo-hd.png";
+import logoImg from "../assets/splogo.png";
 import "./About.css";
 
 const teamRoles = [

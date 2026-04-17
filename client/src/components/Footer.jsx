@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {
   Building2, Phone, Mail, MapPin, ArrowRight
 } from "lucide-react";
-import logoImg from "../assets/logo-hd.png";
+import logoImg from "../assets/splogo.png";
 import "./Footer.css";
 
 // Inline social icons to avoid lucide-react version issues
