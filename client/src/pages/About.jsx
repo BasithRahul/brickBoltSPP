@@ -219,8 +219,8 @@ export default function AboutPage() {
             </div>
 
             <div className="business-card__footer">
-              <a href="https://www.spprojects.in" className="business-card__website" target="_blank" rel="noopener noreferrer">
-                www.spprojects.in
+              <a href="https://www.sppprojects.com" className="business-card__website" target="_blank" rel="noopener noreferrer">
+                www.sppprojects.com
               </a>
             </div>
           </div>
