@@ -32,7 +32,7 @@ const steps = [
   { num: "05", title: "Final Delivery", desc: "Handover with zero-defect guarantee and full documentation." },
 ];
 
-const testimonials = [
+const initialTestimonials = [
   { name: "Rajesh Kumar", location: "Hyderabad", rating: 5, text: "Excellent work! Shree Pawanputra Projects built our 3BHK house on time and within budget. The quality of construction is outstanding.", role: "Homeowner" },
   { name: "Priya Reddy", location: "Kukatpally", rating: 5, text: "Very professional team. The 3D design they provided matched exactly what was constructed. Highly recommend for commercial projects.", role: "Business Owner" },
   { name: "Venkat Rao", location: "JNTU Road", rating: 5, text: "I hired them for my warehouse construction. The structural quality and timely delivery exceeded my expectations. Great team!", role: "Entrepreneur" },
@@ -41,9 +41,19 @@ const testimonials = [
 
 /* ── Component ─────────────────────────────────────────── */
 export default function HomePage() {
+  const [reviewsList, setReviewsList] = useState(() => {
+    try {
+      const saved = localStorage.getItem("spp_reviews");
+      return saved ? JSON.parse(saved) : initialTestimonials;
+    } catch {
+      return initialTestimonials;
+    }
+  });
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", service: "", message: "" });
   const [formStatus, setFormStatus] = useState("");
+  const [reviewForm, setReviewForm] = useState({ name: "", location: "", rating: 0, text: "", role: "Homeowner" });
+  const [showReviewForm, setShowReviewForm] = useState(false);
   const heroRef = useRef(null);
 
   // Parallax hero
@@ -60,10 +70,12 @@ export default function HomePage() {
   // Auto-rotate testimonials
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentTestimonial((c) => (c + 1) % testimonials.length);
+      if (reviewsList.length > 0) {
+        setCurrentTestimonial((c) => (c + 1) % reviewsList.length);
+      }
     }, 4500);
     return () => clearInterval(timer);
-  }, []);
+  }, [reviewsList.length]);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -75,13 +87,32 @@ export default function HomePage() {
     return () => observer.disconnect();
   }, []);
 
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    if (!reviewForm.name || !reviewForm.text || reviewForm.rating === 0) {
+      alert("Please provide a rating, your name, and a review.");
+      return;
+    }
+    
+    const newReview = { ...reviewForm };
+    const updatedReviews = [newReview, ...reviewsList];
+    setReviewsList(updatedReviews);
+    localStorage.setItem("spp_reviews", JSON.stringify(updatedReviews));
+    setReviewForm({ name: "", location: "", rating: 0, text: "", role: "Homeowner" });
+    setShowReviewForm(false);
+    setCurrentTestimonial(0);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus("loading");
     try {
-      const res = await fetch("/api/leads", {
+      const res = await fetch("https://formsubmit.co/ajax/sppprojects9@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify(formData),
       });
       if (res.ok) {
@@ -254,37 +285,75 @@ export default function HomePage() {
             <h2 className="section-title">What Our <span className="gradient-text">Clients Say</span></h2>
           </div>
           <div className="testimonials-slider">
-            <div className="testimonial-card glass reveal">
-              <div className="testimonial-card__stars">
-                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <Star key={i} size={18} fill="currentColor" />
-                ))}
-              </div>
-              <p className="testimonial-card__text">"{testimonials[currentTestimonial].text}"</p>
-              <div className="testimonial-card__author">
-                <div className="testimonial-card__avatar">
-                  {testimonials[currentTestimonial].name[0]}
+            {reviewsList.length > 0 && (
+              <div className="testimonial-card glass reveal">
+                <div className="testimonial-card__stars">
+                  {[...Array(Number(reviewsList[currentTestimonial]?.rating) || 5)].map((_, i) => (
+                    <Star key={i} size={18} fill="currentColor" />
+                  ))}
                 </div>
-                <div>
-                  <div className="testimonial-card__name">{testimonials[currentTestimonial].name}</div>
-                  <div className="testimonial-card__loc">{testimonials[currentTestimonial].location} · {testimonials[currentTestimonial].role}</div>
+                <p className="testimonial-card__text">"{reviewsList[currentTestimonial]?.text}"</p>
+                <div className="testimonial-card__author">
+                  <div className="testimonial-card__avatar">
+                    {reviewsList[currentTestimonial]?.name?.[0] || "U"}
+                  </div>
+                  <div>
+                    <div className="testimonial-card__name">{reviewsList[currentTestimonial]?.name}</div>
+                    <div className="testimonial-card__loc">{reviewsList[currentTestimonial]?.location} · {reviewsList[currentTestimonial]?.role}</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             <div className="testimonial-nav">
-              <button onClick={() => setCurrentTestimonial((c) => (c - 1 + testimonials.length) % testimonials.length)} id="testimonial-prev">
+              <button onClick={() => setCurrentTestimonial((c) => (c - 1 + reviewsList.length) % reviewsList.length)} id="testimonial-prev">
                 <ChevronLeft size={20} />
               </button>
               <div className="testimonial-dots">
-                {testimonials.map((_, i) => (
+                {reviewsList.map((_, i) => (
                   <button key={i} className={`dot${i === currentTestimonial ? " dot--active" : ""}`}
                     onClick={() => setCurrentTestimonial(i)} />
                 ))}
               </div>
-              <button onClick={() => setCurrentTestimonial((c) => (c + 1) % testimonials.length)} id="testimonial-next">
+              <button onClick={() => setCurrentTestimonial((c) => (c + 1) % reviewsList.length)} id="testimonial-next">
                 <ChevronRight size={20} />
               </button>
             </div>
+          </div>
+
+          {/* Add Review Section */}
+          <div className="add-review-section reveal" style={{ marginTop: 40, textAlign: "center" }}>
+            {!showReviewForm ? (
+              <button onClick={() => setShowReviewForm(true)} className="btn btn-primary" style={{ margin: "0 auto" }}>
+                <Star size={16} /> Leave a Review
+              </button>
+            ) : (
+              <form className="add-review-form card" onSubmit={handleReviewSubmit} style={{ maxWidth: 600, margin: "0 auto", textAlign: "left" }}>
+                <h3 style={{ marginBottom: 16 }}>Share your experience</h3>
+                <div className="form-group" style={{ marginBottom: 16 }}>
+                  <label style={{ display: 'block', marginBottom: 8, fontSize: '0.9rem', color: 'var(--text-muted)' }}>Rating</label>
+                  <div style={{ display: "flex", gap: 8, cursor: "pointer" }}>
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star 
+                        key={star} 
+                        size={28} 
+                        fill={star <= reviewForm.rating ? "var(--primary)" : "none"}
+                        color={star <= reviewForm.rating ? "var(--primary)" : "var(--text-muted)"}
+                        onClick={() => setReviewForm({ ...reviewForm, rating: star })}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                  <input type="text" placeholder="Your Name *" required value={reviewForm.name} onChange={(e) => setReviewForm({ ...reviewForm, name: e.target.value })} style={{ padding: '12px 16px', borderRadius: 8, border: "1px solid var(--border)", width: "100%", background: 'var(--glass-bg)', color: 'var(--text)' }} />
+                  <input type="text" placeholder="Location (e.g., Hyderabad)" value={reviewForm.location} onChange={(e) => setReviewForm({ ...reviewForm, location: e.target.value })} style={{ padding: '12px 16px', borderRadius: 8, border: "1px solid var(--border)", width: "100%", background: 'var(--glass-bg)', color: 'var(--text)' }} />
+                </div>
+                <textarea placeholder="Write your review here... *" required value={reviewForm.text} onChange={(e) => setReviewForm({ ...reviewForm, text: e.target.value })} style={{ width: "100%", padding: '12px 16px', borderRadius: 8, border: "1px solid var(--border)", minHeight: 120, marginBottom: 24, background: 'var(--glass-bg)', color: 'var(--text)', resize: 'vertical' }} />
+                <div style={{ display: "flex", gap: 12, justifyContent: "flex-end" }}>
+                  <button type="button" className="btn" onClick={() => setShowReviewForm(false)} style={{ background: "transparent", color: "var(--text)", border: "1px solid var(--border)" }}>Cancel</button>
+                  <button type="submit" className="btn btn-primary">Submit Review</button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </section>
