@@ -69,13 +69,13 @@ export default function AboutPage() {
   return (
     <div className="about-page page-enter">
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="about-hero">
-        <div className="about-hero__bg">
+      <section className="page-hero">
+        <div className="page-hero__bg">
           <div className="hero__grid" />
           <div className="hero__glow hero__glow--1" />
           <div className="hero__glow hero__glow--2" />
         </div>
-        <div className="container about-hero__content">
+        <div className="container page-hero__content">
           <span className="badge">Our Story</span>
           <h1 className="section-title">
             Who We <span className="gradient-text">Are</span>

@@ -101,9 +101,6 @@ export default function Navbar() {
           <a href="tel:+919000100889" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
             <Phone size={16} /> Call Now
           </a>
-          <button className="navbar__theme-btn navbar__theme-btn--mobile" onClick={toggleTheme}>
-            {theme === "dark" ? <><Sun size={18} /> Light Mode</> : <><Moon size={18} /> Dark Mode</>}
-          </button>
         </div>
       </div>
     </header>

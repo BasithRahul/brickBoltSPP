@@ -254,6 +254,9 @@
   .about-achievements { grid-template-columns: 1fr 1fr; }
   .about-services-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr 1fr; }
+  .leadership-card { padding: 24px; gap: 24px; }
+  .achievement-card { padding: 20px 16px; }
+  .achievement-card__value { font-size: 2rem; }
 }
 
 /* ── Digital Business Card ─────────────────────────── */
