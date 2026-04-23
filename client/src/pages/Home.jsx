@@ -124,7 +124,9 @@ export default function HomePage() {
         // Show success message to the user
         alert("Review added successfully!");
       } else {
-        alert("Failed to submit review. Please try again.");
+        const errData = await res.json().catch(() => ({}));
+        const errorMsg = errData.details || errData.error || "Please try again.";
+        alert(`Failed to submit review: ${errorMsg}`);
       }
     } catch (err) {
       console.error("Failed to submit review", err);
