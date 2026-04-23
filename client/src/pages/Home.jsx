@@ -105,22 +105,30 @@ export default function HomePage() {
       return;
     }
     
-    // Optimistic UI update
-    const newReview = { ...reviewForm, id: Date.now().toString() };
-    setReviewsList((prev) => [newReview, ...prev]);
-    setReviewForm({ name: "", location: "", rating: 0, text: "", role: "Homeowner" });
-    setShowReviewForm(false);
-    setCurrentTestimonial(0);
-
-    // Save globally to backend
     try {
-      await fetch("/api/reviews", {
+      // Save globally to backend first
+      const res = await fetch("/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newReview),
+        body: JSON.stringify(reviewForm),
       });
+
+      if (res.ok) {
+        const data = await res.json();
+        // Update UI with the actual database record
+        setReviewsList((prev) => [data.review, ...prev]);
+        setReviewForm({ name: "", location: "", rating: 0, text: "", role: "Homeowner" });
+        setShowReviewForm(false);
+        setCurrentTestimonial(0);
+        
+        // Show success message to the user
+        alert("Review added successfully!");
+      } else {
+        alert("Failed to submit review. Please try again.");
+      }
     } catch (err) {
       console.error("Failed to submit review", err);
+      alert("Error submitting review. Please try again later.");
     }
   };
 
