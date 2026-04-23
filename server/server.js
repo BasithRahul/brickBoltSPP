@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ── Routes ────────────────────────────────────────────────
 app.use("/api/leads", require("./routes/leads"));
+app.use("/api/reviews", require("./routes/reviews"));
 
 app.get("/", (req, res) => {
   res.json({ message: "Shree Pawanputra Projects API is running ✅ (No Database Mode)" });

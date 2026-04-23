@@ -41,14 +41,7 @@ const initialTestimonials = [
 
 /* ── Component ─────────────────────────────────────────── */
 export default function HomePage() {
-  const [reviewsList, setReviewsList] = useState(() => {
-    try {
-      const saved = localStorage.getItem("spp_reviews");
-      return saved ? JSON.parse(saved) : initialTestimonials;
-    } catch {
-      return initialTestimonials;
-    }
-  });
+  const [reviewsList, setReviewsList] = useState(initialTestimonials);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", service: "", message: "" });
   const [formStatus, setFormStatus] = useState("");
@@ -65,6 +58,24 @@ export default function HomePage() {
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Fetch reviews from server
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const res = await fetch("/api/reviews");
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.length > 0) {
+            setReviewsList(data);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch reviews", err);
+      }
+    };
+    fetchReviews();
   }, []);
 
   // Auto-rotate testimonials
@@ -87,20 +98,30 @@ export default function HomePage() {
     return () => observer.disconnect();
   }, []);
 
-  const handleReviewSubmit = (e) => {
+  const handleReviewSubmit = async (e) => {
     e.preventDefault();
     if (!reviewForm.name || !reviewForm.text || reviewForm.rating === 0) {
       alert("Please provide a rating, your name, and a review.");
       return;
     }
     
-    const newReview = { ...reviewForm };
-    const updatedReviews = [newReview, ...reviewsList];
-    setReviewsList(updatedReviews);
-    localStorage.setItem("spp_reviews", JSON.stringify(updatedReviews));
+    // Optimistic UI update
+    const newReview = { ...reviewForm, id: Date.now().toString() };
+    setReviewsList((prev) => [newReview, ...prev]);
     setReviewForm({ name: "", location: "", rating: 0, text: "", role: "Homeowner" });
     setShowReviewForm(false);
     setCurrentTestimonial(0);
+
+    // Save globally to backend
+    try {
+      await fetch("/api/reviews", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newReview),
+      });
+    } catch (err) {
+      console.error("Failed to submit review", err);
+    }
   };
 
   const handleSubmit = async (e) => {
