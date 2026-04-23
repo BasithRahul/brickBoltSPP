@@ -6,10 +6,33 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ── Database Connection ───────────────────────────────────
-mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("✅ MongoDB Connected"))
-.catch((err) => console.error("❌ MongoDB Connection Error:", err));
+// ── Serverless Database Connection Middleware ──────────────
+let cachedDb = null;
+
+async function connectToDatabase() {
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("✅ MongoDB Connected (Serverless)");
+  } catch (err) {
+    console.error("❌ MongoDB Connection Error:", err);
+    throw err;
+  }
+}
+
+app.use(async (req, res, next) => {
+  // Only connect to DB for API routes
+  if (req.path.startsWith('/api')) {
+    try {
+      await connectToDatabase();
+    } catch (err) {
+      return res.status(500).json({ error: "Database connection failed", details: err.message });
+    }
+  }
+  next();
+});
 
 // ── Middleware ────────────────────────────────────────────
 app.use(cors({

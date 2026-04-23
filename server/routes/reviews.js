@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
     res.status(201).json({ success: true, review: newReview });
   } catch (err) {
     console.error("Review submission error:", err);
-    res.status(500).json({ error: "Server error" });
+    res.status(500).json({ error: "Server error", details: err.message });
   }
 });
 
