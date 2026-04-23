@@ -45,8 +45,9 @@ export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", service: "", message: "" });
   const [formStatus, setFormStatus] = useState("");
-  const [reviewForm, setReviewForm] = useState({ name: "", location: "", rating: 0, text: "", role: "Homeowner" });
   const [showReviewForm, setShowReviewForm] = useState(false);
+  const [reviewForm, setReviewForm] = useState({ name: "", location: "", rating: 0, text: "", role: "Homeowner" });
+  const [reviewToast, setReviewToast] = useState(null);
   const heroRef = useRef(null);
 
   // Parallax hero
@@ -101,7 +102,7 @@ export default function HomePage() {
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
     if (!reviewForm.name || !reviewForm.text || reviewForm.rating === 0) {
-      alert("Please provide a rating, your name, and a review.");
+      showToast("Please provide a rating, your name, and a review.", "error");
       return;
     }
     
@@ -122,16 +123,21 @@ export default function HomePage() {
         setCurrentTestimonial(0);
         
         // Show success message to the user
-        alert("Review added successfully!");
+        showToast("Review added successfully!", "success");
       } else {
         const errData = await res.json().catch(() => ({}));
         const errorMsg = errData.details || errData.error || "Please try again.";
-        alert(`Failed to submit review: ${errorMsg}`);
+        showToast(`Failed to submit review: ${errorMsg}`, "error");
       }
     } catch (err) {
       console.error("Failed to submit review", err);
-      alert("Error submitting review. Please try again later.");
+      showToast("Error submitting review. Please try again later.", "error");
     }
+  };
+
+  const showToast = (message, type) => {
+    setReviewToast({ message, type });
+    setTimeout(() => setReviewToast(null), 3500);
   };
 
   const handleSubmit = async (e) => {
@@ -315,39 +321,33 @@ export default function HomePage() {
             <span className="badge">Client Reviews</span>
             <h2 className="section-title">What Our <span className="gradient-text">Clients Say</span></h2>
           </div>
-          <div className="testimonials-slider">
-            {reviewsList.length > 0 && (
-              <div className="testimonial-card glass reveal">
-                <div className="testimonial-card__stars">
-                  {[...Array(Number(reviewsList[currentTestimonial]?.rating) || 5)].map((_, i) => (
-                    <Star key={i} size={18} fill="currentColor" />
-                  ))}
-                </div>
-                <p className="testimonial-card__text">"{reviewsList[currentTestimonial]?.text}"</p>
-                <div className="testimonial-card__author">
-                  <div className="testimonial-card__avatar">
-                    {reviewsList[currentTestimonial]?.name?.[0] || "U"}
+          <div className="marquee-container reveal">
+            <div className="marquee-track">
+              {/* Double mapping for seamless infinite loop */}
+              {[...reviewsList, ...reviewsList].map((review, i) => (
+                <div className="testimonial-card marquee-card glass" key={i}>
+                  <div className="testimonial-card__stars">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star 
+                        key={star} 
+                        size={18} 
+                        fill={star <= (Number(review.rating) || 5) ? "var(--accent)" : "none"}
+                        color={star <= (Number(review.rating) || 5) ? "var(--accent)" : "var(--text-muted)"}
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <div className="testimonial-card__name">{reviewsList[currentTestimonial]?.name}</div>
-                    <div className="testimonial-card__loc">{reviewsList[currentTestimonial]?.location} · {reviewsList[currentTestimonial]?.role}</div>
+                  <p className="testimonial-card__text">"{review.text}"</p>
+                  <div className="testimonial-card__author">
+                    <div className="testimonial-card__avatar">
+                      {review.name?.[0] || "U"}
+                    </div>
+                    <div>
+                      <div className="testimonial-card__name">{review.name}</div>
+                      <div className="testimonial-card__loc">{review.location} {review.location && '·'} {review.role}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
-            <div className="testimonial-nav">
-              <button onClick={() => setCurrentTestimonial((c) => (c - 1 + reviewsList.length) % reviewsList.length)} id="testimonial-prev">
-                <ChevronLeft size={20} />
-              </button>
-              <div className="testimonial-dots">
-                {reviewsList.map((_, i) => (
-                  <button key={i} className={`dot${i === currentTestimonial ? " dot--active" : ""}`}
-                    onClick={() => setCurrentTestimonial(i)} />
-                ))}
-              </div>
-              <button onClick={() => setCurrentTestimonial((c) => (c + 1) % reviewsList.length)} id="testimonial-next">
-                <ChevronRight size={20} />
-              </button>
+              ))}
             </div>
           </div>
 
@@ -441,6 +441,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Global Toast Notification */}
+      {reviewToast && (
+        <div className={`review-toast ${reviewToast.type === 'error' ? 'error' : ''}`}>
+          {reviewToast.type === 'success' ? <CheckCircle2 size={20} /> : <ArrowRight size={20} />}
+          <span>{reviewToast.message}</span>
+        </div>
+      )}
     </div>
   );
 }
